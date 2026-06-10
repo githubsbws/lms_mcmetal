@@ -1,0 +1,78 @@
+body{
+    padding-bottom: 0 !important;
+}
+.navbar.navbar-size-xlarge .navbar-nav > li > a {
+    font-size: 1.9rem;
+}
+.navbar.navbar-size-large .navbar-nav > li > a{
+    font-size: 1.9rem;
+}
+.btn{
+    font-size: 19px;
+}
+.jumbotron h1, .text-display-1 {
+    font-size: 3.8rem;
+}
+.text-headline {
+    font-size: 30px;
+}
+/* heading */
+h1{
+    font-size: 45px;
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
+h2{
+    font-size: 40px;
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
+h3{
+    font-size: 35px;
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
+h4{
+    font-size: 30px;
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
+h5{
+    font-size: 25px;
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
+h6{
+    font-size: 20px;
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
+/* ************* */
+.lead {
+    font-size: 21.5px;
+}
+.footer-section {
+    font-size: 1.4rem;
+}
+body {
+    font-size: 1.5rem;
+}
+.panel-title {
+    font-size: 22px;
+}
+/* Menu */
+.navbar-nav .dropdown-menu > li > a, .navbar-nav .dropdown-menu > li > a:focus {
+    padding: 4px 14px;
+}
+.dropdown-menu {
+    font-size: 20px;
+}
+.page-section {
+    padding: 25px 0;
+}
+.errorSummary{
+    color:red;
+}
+.form-control {
+    height: 45px;
+}

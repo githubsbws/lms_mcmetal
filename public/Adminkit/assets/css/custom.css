@@ -1,0 +1,286 @@
+@font-face {
+    font-family: 'THSarabunNew';
+    src: url('../fonts/Sarabun/fonts/thsarabunnew-webfont.eot');
+    src: url('../fonts/Sarabun/fonts/thsarabunnew-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Sarabun/fonts/thsarabunnew-webfont.woff') format('woff'),
+         url('../fonts/Sarabun/fonts/thsarabunnew-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'THSarabunNew';
+    src: url('../fonts/Sarabun/fonts/thsarabunnew_bolditalic-webfont.eot');
+    src: url('../fonts/Sarabun/fonts/thsarabunnew_bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Sarabun/fonts/thsarabunnew_bolditalic-webfont.woff') format('woff'),
+         url('../fonts/Sarabun/fonts/thsarabunnew_bolditalic-webfont.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'THSarabunNew';
+    src: url('../fonts/Sarabun/fonts/thsarabunnew_italic-webfont.eot');
+    src: url('../fonts/Sarabun/fonts/thsarabunnew_italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Sarabun/fonts/thsarabunnew_italic-webfont.woff') format('woff'),
+         url('../fonts/Sarabun/fonts/thsarabunnew_italic-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'THSarabunNew';
+    src: url('../fonts/Sarabun/fonts/thsarabunnew_bold-webfont.eot');
+    src: url('../fonts/Sarabun/fonts/thsarabunnew_bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Sarabun/fonts/thsarabunnew_bold-webfont.woff') format('woff'),
+         url('../fonts/Sarabun/fonts/thsarabunnew_bold-webfont.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+.thsarabunnew{
+   font-family: 'THSarabunNew', sans-serif;
+}
+
+body,p,a,label{
+	/*font-style: oblique;nt-size: 20px;*/
+    font-family: 'THSarabunNew', sans-serif;
+}
+p{font-size: 14px;}
+body{
+    background: url(../images/bg/bg1-01.jpg) no-repeat center top fixed;
+    background-size: cover;
+}
+input,select,textarea,button,span{font-size: 18px }
+.dropdown li a, .sup-dropdown li a{font-size: 16px;}
+footer{
+	background-color: #00838F;
+    padding-top: 1em;
+}
+.navbar-default .navbar-nav > li > a{
+    font-weight: normal;
+    font-family: 'db_helvethaica_x45_li', sans-serif;
+    padding: 28px 10px 28px 10px;
+    font-size: 24px;
+}
+#container{
+	background-color: #CFD8DC;
+}
+.btn-medium {
+    font-size: 16px;
+}
+.navbar-top.affix{
+	box-shadow: 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12), 0 3px 5px -1px rgba(0,0,0,0.3);
+}
+/* Start Footer */
+.contact-widget {
+    background: url(../images/books.png) center bottom no-repeat;
+}
+/* End Footer */
+.page-banner{
+	background: transparent;
+	background-color: #37474F;
+}
+.text-white{color: white;}
+.grey.lighten-1{color: #bdbdbd;}
+.progress-bar{background-color: #26A69A;}
+.top-bar {
+    background-color: #CFD8DC;
+    border-bottom: 0;
+}
+ul.social-list li a i {border-left: 1px solid #dbe3e6;}
+.team-member .member-photo .member-name span {
+    background-color: #26A69A;
+}
+ol {
+    list-style:decimal;
+}
+.text-indent{
+    text-indent: 2em;
+}
+.center{
+    text-align: center;
+}
+.modal{
+    z-index: 99999999 !important;
+}
+#registerForm input[type="text"],#registerForm input[type="password"],#registerForm input[type="tel"],#registerForm input[type="date"],#registerForm input[type="number"], #registerForm textarea,#registerForm select,.email {
+    color: #000;
+    font-size: 13px;
+    font-family: 'cs_chatthairegular';
+    border: 1px solid #eee;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    outline: none;
+    width: 100%;
+    padding: 7px 14px;
+    display: block;
+    margin-bottom: 10px;
+    transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+}
+.modal-content{
+    background-color: #FAFAFA;
+    border-radius: 0;
+    border: 0;
+}
+.modal-header{
+    background-color: #00838F;
+}
+.modal-footer{
+        background-color: #37474F;
+}
+.has-error .checkbox, .has-error .checkbox-inline, .has-error .control-label, .has-error .help-block, .has-error .radio, .has-error .radio-inline, .has-error.checkbox label, .has-error.checkbox-inline label, .has-error.radio label, .has-error.radio-inline label {
+    color: red;
+}
+.footer-widget {
+    margin-bottom: 0.5em;
+}
+.client-item.item img{
+    height: 64px;
+}
+.parallax-text-container-1 .parallax-text-item {
+    padding: 50px 0px;
+    text-align: center;
+}
+.bg-white{background-color: white;}
+.bg-white50{background-color: rgba(255, 255, 255, 0.5);}
+.mt-2em{margin-top: 2em;}
+.mb-1em{margin-top: 1em;}
+.pd-2em{padding: 2em;}
+.pd-1em{padding: 1em;}
+.border{border: 4px solid #26A69A}
+.text-black{color: #000!important;}
+.section{padding-top: 50px;}
+label .required {
+    color: #333;
+    margin-left: 2px;
+}
+ul.breadcrumbs li a{
+     font-family: 'db_helvethaica_x45_li', sans-serif;
+    font-size: 16px;
+    color: #ddd;
+    font-weight: normal;
+}
+ul.breadcrumbs li{
+    font-size: 18px;
+    color: #fff;
+    font-weight: normal;
+}
+h4.classic-title span{font-size: 24px; font-weight: bold;border-bottom: 4px solid #03737d;}
+.widget-search input[type="search"],input[type="email"], #contactForm input[type="text"], #contactForm textarea, #respond input[type="text"], #respond textarea, .email{
+    font-family: 'THSarabunNew', sans-serif;
+     border-top: 0;
+    border-left: 0;
+    /*border-right: 0;*/
+    border-radius: 0;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 50%;
+    box-shadow: 2px 2px 5px #ddd;
+}
+.widget-search input[type="search"]:focus,input[type="email"]:focus, #contactForm input[type="text"]:focus, #contactForm textarea:focus, #respond input[type="text"]:focus, #respond textarea:focus{
+    width: 80%;
+    font-size: 10px;
+    border: transparent;
+    box-shadow: 2px 2px 5px rgba(0, 131, 143, 0.5);
+}
+.classic-title {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #03737d;
+}
+.btn-default{
+    background-color: #00838f;
+    border-color: #00838f !important;
+    color: #ffffff !important;
+}
+.btn-default.disabled.focus, .btn-default.disabled:focus, .btn-default.disabled:hover, .btn-default[disabled].focus, .btn-default[disabled]:focus, .btn-default[disabled]:hover, fieldset[disabled] .btn-default.focus, fieldset[disabled] .btn-default:focus, fieldset[disabled] .btn-default:hover{
+    background-color: #03737d;
+}
+.content-body{
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 2em 1em;
+}
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default{
+    background-color: #03737d;
+}
+.panel-title a{
+    padding: 20px 20px;
+    font-size: 16px;
+}
+.panel.panel-default{
+    -webkit-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+.panel.panel-default:hover{
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12), 0 3px 5px -1px rgba(0,0,0,0.3);
+    -webkit-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+}
+.well{
+    color: #000;
+    background-color: rgba(38, 166, 154, 0.5);
+    border-radius: 10px;
+    border: 4px solid #e3e3e3;
+}
+.widget.widget-search input{
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    box-shadow: none;
+}
+.widget.widget-search input:focus{
+    box-shadow: none;
+}
+.widget-search .search-btn{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.sidebar .widget h4{
+    font-size: 20px;
+    font-weight: bold;
+}
+.sidebar .widget h4 .head-line{
+    background-color: #5b2d90;
+}
+.page-banner h2{
+    font-weight: bold;
+        font-size: 30px;
+}
+.top-bar a {
+    color: #333;
+    font-weight: bold;
+}
+.team-member:hover{
+    box-shadow: 10px 10px 10px #aaa;
+    -webkit-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+}
+.team-member{
+    -webkit-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+#form-login label{
+    font-weight: bold;
+}
+.latest-posts-classic .left-meta-post .post-type img{
+    height: 80px;
+    max-height: 80px;
+}
+.latest-posts-classic .left-meta-post .post-date{
+    width: 100%;
+    background-color: rgba(68, 68, 68, 0.5);
+}
