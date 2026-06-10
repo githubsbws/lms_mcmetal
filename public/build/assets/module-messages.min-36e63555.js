@@ -1,0 +1,1 @@
+(function(i){i(window).bind("enterBreakpoint320",function(){var n=i(".messages-list .panel ul img");i(".messages-list .panel ul").width(n.first().width()*n.length)}),i(window).bind("exitBreakpoint320",function(){i(".messages-list .panel ul").width("auto")})})(jQuery);

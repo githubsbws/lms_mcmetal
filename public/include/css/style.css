@@ -1,0 +1,85 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Kanit", sans-serif;
+}
+
+        .nav-sidebar {
+            left: 260px !important;
+            float: right;
+            padding-left: 274px;
+            margin-bottom: 2rem;
+        }
+        
+        main {
+            .section {
+                margin-top: 62px;
+            }
+        }
+.notify-btn{
+    background-color: #F5F7FA;
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    padding: 5px;
+    border: none;
+    font-size: 20px;
+}
+.dropdown-btn{
+    border: none;
+    color: #54657E;
+    background-color: #fff;
+}
+
+.statusCard{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    color: #fff;
+    border-radius: 8px;
+}
+.statusCard-1{
+    background-color: #3C69D7;
+}
+.statusCard-1 .statusIcons{
+    font-size: 5rem;
+    color: #85a7ff;
+}
+.statusCard-2{
+    background-color: #39CD56;
+}
+.statusCard-2 .statusIcons{
+    font-size: 5rem;
+    color: #2a9b40;
+}
+.statusCard-3{
+    background-color: #F4B617;
+}
+.statusCard-3 .statusIcons{
+    font-size: 5rem;
+    color: #bd8d12;
+}
+.text-status-up{
+    background-color: #13c819;
+    padding: 1px 10px;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 14px;
+}
+.text-status-down{
+    background-color: #c81313;
+    padding: 1px 10px;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 14px;
+}
+.divided{
+    height: 1px;
+    width: 100%;
+    border: none;
+    background: #858585;
+}
+button.badge{
+    border: none;
+}

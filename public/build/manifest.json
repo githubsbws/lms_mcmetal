@@ -1,0 +1,923 @@
+{
+  "resources/Adminkit/bootstrap/css/bootstrap.css": {
+    "file": "assets/bootstrap-9d387085.css",
+    "isEntry": true,
+    "src": "resources/Adminkit/bootstrap/css/bootstrap.css"
+  },
+  "resources/Adminkit/bootstrap/css/responsive.css": {
+    "file": "assets/responsive-53a98093.css",
+    "isEntry": true,
+    "src": "resources/Adminkit/bootstrap/css/responsive.css"
+  },
+  "resources/Adminkit/bootstrap/extend/bootstrap-image-gallery/css/bootstrap-image-gallery.min.css": {
+    "file": "assets/bootstrap-image-gallery.min-da1e7012.css",
+    "isEntry": true,
+    "src": "resources/Adminkit/bootstrap/extend/bootstrap-image-gallery/css/bootstrap-image-gallery.min.css"
+  },
+  "resources/Adminkit/bootstrap/extend/bootstrap-image-gallery/img/loading.gif": {
+    "file": "assets/loading-b84750cc.gif",
+    "src": "resources/Adminkit/bootstrap/extend/bootstrap-image-gallery/img/loading.gif"
+  },
+  "resources/Adminkit/bootstrap/extend/bootstrap-select/bootstrap-select.css": {
+    "file": "assets/bootstrap-select-17720954.css",
+    "isEntry": true,
+    "src": "resources/Adminkit/bootstrap/extend/bootstrap-select/bootstrap-select.css"
+  },
+  "resources/Adminkit/bootstrap/extend/bootstrap-toggle-buttons/static/stylesheets/bootstrap-toggle-buttons.css": {
+    "file": "assets/bootstrap-toggle-buttons-bd1f60b4.css",
+    "isEntry": true,
+    "src": "resources/Adminkit/bootstrap/extend/bootstrap-toggle-buttons/static/stylesheets/bootstrap-toggle-buttons.css"
+  },
+  "resources/Adminkit/bootstrap/extend/bootstrap-wysihtml5/css/bootstrap-wysihtml5-0.0.2.css": {
+    "file": "assets/bootstrap-wysihtml5-0.0.2-49ba3a3c.css",
+    "isEntry": true,
+    "src": "resources/Adminkit/bootstrap/extend/bootstrap-wysihtml5/css/bootstrap-wysihtml5-0.0.2.css"
+  },
+  "resources/Adminkit/bootstrap/extend/jasny-bootstrap/css/jasny-bootstrap-responsive.min.css": {
+    "file": "assets/jasny-bootstrap-responsive.min-bff85ec0.css",
+    "isEntry": true,
+    "src": "resources/Adminkit/bootstrap/extend/jasny-bootstrap/css/jasny-bootstrap-responsive.min.css"
+  },
+  "resources/Adminkit/bootstrap/extend/jasny-bootstrap/css/jasny-bootstrap.min.css": {
+    "file": "assets/jasny-bootstrap.min-7ff43141.css",
+    "isEntry": true,
+    "src": "resources/Adminkit/bootstrap/extend/jasny-bootstrap/css/jasny-bootstrap.min.css"
+  },
+  "resources/Adminkit/bootstrap/extend/jasny-bootstrap/fonts/iconic_fill.eot": {
+    "file": "assets/iconic_fill-0e2a8c2c.eot",
+    "src": "resources/Adminkit/bootstrap/extend/jasny-bootstrap/fonts/iconic_fill.eot"
+  },
+  "resources/Adminkit/bootstrap/extend/jasny-bootstrap/fonts/iconic_fill.otf": {
+    "file": "assets/iconic_fill-531f1289.otf",
+    "src": "resources/Adminkit/bootstrap/extend/jasny-bootstrap/fonts/iconic_fill.otf"
+  },
+  "resources/Adminkit/bootstrap/extend/jasny-bootstrap/fonts/iconic_fill.ttf": {
+    "file": "assets/iconic_fill-750e9f20.ttf",
+    "src": "resources/Adminkit/bootstrap/extend/jasny-bootstrap/fonts/iconic_fill.ttf"
+  },
+  "resources/Adminkit/bootstrap/extend/jasny-bootstrap/fonts/iconic_fill.woff": {
+    "file": "assets/iconic_fill-47685e01.woff",
+    "src": "resources/Adminkit/bootstrap/extend/jasny-bootstrap/fonts/iconic_fill.woff"
+  },
+  "resources/Adminkit/bootstrap/extend/jasny-bootstrap/fonts/iconic_stroke.eot": {
+    "file": "assets/iconic_stroke-7832d747.eot",
+    "src": "resources/Adminkit/bootstrap/extend/jasny-bootstrap/fonts/iconic_stroke.eot"
+  },
+  "resources/Adminkit/bootstrap/extend/jasny-bootstrap/fonts/iconic_stroke.otf": {
+    "file": "assets/iconic_stroke-e399f5a7.otf",
+    "src": "resources/Adminkit/bootstrap/extend/jasny-bootstrap/fonts/iconic_stroke.otf"
+  },
+  "resources/Adminkit/bootstrap/extend/jasny-bootstrap/fonts/iconic_stroke.ttf": {
+    "file": "assets/iconic_stroke-59c5c80c.ttf",
+    "src": "resources/Adminkit/bootstrap/extend/jasny-bootstrap/fonts/iconic_stroke.ttf"
+  },
+  "resources/Adminkit/bootstrap/extend/jasny-bootstrap/fonts/iconic_stroke.woff": {
+    "file": "assets/iconic_stroke-ff2b3aca.woff",
+    "src": "resources/Adminkit/bootstrap/extend/jasny-bootstrap/fonts/iconic_stroke.woff"
+  },
+  "resources/Adminkit/bootstrap/img/glyphicons-halflings-white.png": {
+    "file": "assets/glyphicons-halflings-white-f0e0d95a.png",
+    "src": "resources/Adminkit/bootstrap/img/glyphicons-halflings-white.png"
+  },
+  "resources/Adminkit/bootstrap/img/glyphicons-halflings.png": {
+    "file": "assets/glyphicons-halflings-d99e3fa3.png",
+    "src": "resources/Adminkit/bootstrap/img/glyphicons-halflings.png"
+  },
+  "resources/Adminkit/bootstrap/img/loading.gif": {
+    "file": "assets/loading-ee53ada6.gif",
+    "src": "resources/Adminkit/bootstrap/img/loading.gif"
+  },
+  "resources/Adminkit/theme/css/down.gif": {
+    "file": "assets/down-80b8b7b8.gif",
+    "src": "resources/Adminkit/theme/css/down.gif"
+  },
+  "resources/Adminkit/theme/css/glyphicons.css": {
+    "file": "assets/glyphicons-d672cf65.css",
+    "isEntry": true,
+    "src": "resources/Adminkit/theme/css/glyphicons.css"
+  },
+  "resources/Adminkit/theme/css/style.min.css": {
+    "file": "assets/style.min-87390c54.css",
+    "isEntry": true,
+    "src": "resources/Adminkit/theme/css/style.min.css"
+  },
+  "resources/Adminkit/theme/css/up.gif": {
+    "file": "assets/up-9f2626a7.gif",
+    "src": "resources/Adminkit/theme/css/up.gif"
+  },
+  "resources/Adminkit/theme/fonts/glyphicons-regular.eot": {
+    "file": "assets/glyphicons-regular-47b9eb79.eot",
+    "src": "resources/Adminkit/theme/fonts/glyphicons-regular.eot"
+  },
+  "resources/Adminkit/theme/fonts/glyphicons-regular.svg": {
+    "file": "assets/glyphicons-regular-b3e37847.svg",
+    "src": "resources/Adminkit/theme/fonts/glyphicons-regular.svg"
+  },
+  "resources/Adminkit/theme/fonts/glyphicons-regular.ttf": {
+    "file": "assets/glyphicons-regular-5611c846.ttf",
+    "src": "resources/Adminkit/theme/fonts/glyphicons-regular.ttf"
+  },
+  "resources/Adminkit/theme/fonts/glyphicons-regular.woff": {
+    "file": "assets/glyphicons-regular-ffbc1152.woff",
+    "src": "resources/Adminkit/theme/fonts/glyphicons-regular.woff"
+  },
+  "resources/Adminkit/theme/images/mosaic-pattern.png": {
+    "file": "assets/mosaic-pattern-ab974ee1.png",
+    "src": "resources/Adminkit/theme/images/mosaic-pattern.png"
+  },
+  "resources/Adminkit/theme/images/pattern1.png": {
+    "file": "assets/pattern1-0b57ce1d.png",
+    "src": "resources/Adminkit/theme/images/pattern1.png"
+  },
+  "resources/Adminkit/theme/scripts/plugins/charts/easy-pie/jquery.easy-pie-chart.css": {
+    "file": "assets/jquery.easy-pie-chart-40a62f69.css",
+    "isEntry": true,
+    "src": "resources/Adminkit/theme/scripts/plugins/charts/easy-pie/jquery.easy-pie-chart.css"
+  },
+  "resources/Adminkit/theme/scripts/plugins/color/jquery-miniColors/jquery.miniColors.css": {
+    "file": "assets/jquery.miniColors-95cd81c5.css",
+    "isEntry": true,
+    "src": "resources/Adminkit/theme/scripts/plugins/color/jquery-miniColors/jquery.miniColors.css"
+  },
+  "resources/Adminkit/theme/scripts/plugins/color/jquery-miniColors/jquery.minicolors.png": {
+    "file": "assets/jquery.minicolors-2cc1b274.png",
+    "src": "resources/Adminkit/theme/scripts/plugins/color/jquery-miniColors/jquery.minicolors.png"
+  },
+  "resources/Adminkit/theme/scripts/plugins/forms/bootstrap-datetimepicker/css/datetimepicker.css": {
+    "file": "assets/datetimepicker-561892bf.css",
+    "isEntry": true,
+    "src": "resources/Adminkit/theme/scripts/plugins/forms/bootstrap-datetimepicker/css/datetimepicker.css"
+  },
+  "resources/Adminkit/theme/scripts/plugins/forms/pixelmatrix-uniform/css/uniform.default.css": {
+    "file": "assets/uniform.default-18e3d607.css",
+    "isEntry": true,
+    "src": "resources/Adminkit/theme/scripts/plugins/forms/pixelmatrix-uniform/css/uniform.default.css"
+  },
+  "resources/Adminkit/theme/scripts/plugins/forms/pixelmatrix-uniform/images/bg-input-focus.png": {
+    "file": "assets/bg-input-focus-a22d3df8.png",
+    "src": "resources/Adminkit/theme/scripts/plugins/forms/pixelmatrix-uniform/images/bg-input-focus.png"
+  },
+  "resources/Adminkit/theme/scripts/plugins/forms/pixelmatrix-uniform/images/bg-input.png": {
+    "file": "assets/bg-input-3e6fe9c5.png",
+    "src": "resources/Adminkit/theme/scripts/plugins/forms/pixelmatrix-uniform/images/bg-input.png"
+  },
+  "resources/Adminkit/theme/scripts/plugins/forms/pixelmatrix-uniform/images/sprite.png": {
+    "file": "assets/sprite-73702bf1.png",
+    "src": "resources/Adminkit/theme/scripts/plugins/forms/pixelmatrix-uniform/images/sprite.png"
+  },
+  "resources/Adminkit/theme/scripts/plugins/forms/select2/select2-spinner.gif": {
+    "file": "assets/select2-spinner-f6ecff61.gif",
+    "src": "resources/themes/bws/css/select2-spinner.gif"
+  },
+  "resources/Adminkit/theme/scripts/plugins/forms/select2/select2.css": {
+    "file": "assets/select2-1acd56ba.css",
+    "isEntry": true,
+    "src": "resources/Adminkit/theme/scripts/plugins/forms/select2/select2.css"
+  },
+  "resources/Adminkit/theme/scripts/plugins/forms/select2/select2x2.png": {
+    "file": "assets/select2x2-6fe28d68.png",
+    "src": "resources/themes/bws/css/select2x2.png"
+  },
+  "resources/Adminkit/theme/scripts/plugins/notifications/Gritter/css/jquery.gritter.css": {
+    "file": "assets/jquery.gritter-2ba0f108.css",
+    "isEntry": true,
+    "src": "resources/Adminkit/theme/scripts/plugins/notifications/Gritter/css/jquery.gritter.css"
+  },
+  "resources/Adminkit/theme/scripts/plugins/notifications/Gritter/images/gritter-light.png": {
+    "file": "assets/gritter-light-ba4cf27f.png",
+    "src": "resources/Adminkit/theme/scripts/plugins/notifications/Gritter/images/gritter-light.png"
+  },
+  "resources/Adminkit/theme/scripts/plugins/notifications/Gritter/images/gritter.png": {
+    "file": "assets/gritter-5fd093ec.png",
+    "src": "resources/Adminkit/theme/scripts/plugins/notifications/Gritter/images/gritter.png"
+  },
+  "resources/Adminkit/theme/scripts/plugins/notifications/Gritter/images/ie-spacer.gif": {
+    "file": "assets/ie-spacer-c52b3131.gif",
+    "src": "resources/Adminkit/theme/scripts/plugins/notifications/Gritter/images/ie-spacer.gif"
+  },
+  "resources/Adminkit/theme/scripts/plugins/notifications/notyfy/jquery.notyfy.css": {
+    "file": "assets/jquery.notyfy-c434509b.css",
+    "isEntry": true,
+    "src": "resources/Adminkit/theme/scripts/plugins/notifications/notyfy/jquery.notyfy.css"
+  },
+  "resources/Adminkit/theme/scripts/plugins/notifications/notyfy/themes/default.css": {
+    "file": "assets/default-bfed893e.css",
+    "isEntry": true,
+    "src": "resources/Adminkit/theme/scripts/plugins/notifications/notyfy/themes/default.css"
+  },
+  "resources/Adminkit/theme/scripts/plugins/other/excanvas/excanvas.js": {
+    "file": "assets/excanvas-ecbbd0b3.js",
+    "isEntry": true,
+    "src": "resources/Adminkit/theme/scripts/plugins/other/excanvas/excanvas.js"
+  },
+  "resources/Adminkit/theme/scripts/plugins/other/google-code-prettify/prettify.css": {
+    "file": "assets/prettify-38fe2811.css",
+    "isEntry": true,
+    "src": "resources/Adminkit/theme/scripts/plugins/other/google-code-prettify/prettify.css"
+  },
+  "resources/Adminkit/theme/scripts/plugins/system/jquery-ui/css/smoothness/images/ui-bg_flat_0_aaaaaa_40x100.png": {
+    "file": "assets/ui-bg_flat_0_aaaaaa_40x100-2e1bf9bb.png",
+    "src": "resources/Adminkit/theme/scripts/plugins/system/jquery-ui/css/smoothness/images/ui-bg_flat_0_aaaaaa_40x100.png"
+  },
+  "resources/Adminkit/theme/scripts/plugins/system/jquery-ui/css/smoothness/images/ui-bg_flat_75_ffffff_40x100.png": {
+    "file": "assets/ui-bg_flat_75_ffffff_40x100-282cc982.png",
+    "src": "resources/Adminkit/theme/scripts/plugins/system/jquery-ui/css/smoothness/images/ui-bg_flat_75_ffffff_40x100.png"
+  },
+  "resources/Adminkit/theme/scripts/plugins/system/jquery-ui/css/smoothness/images/ui-bg_glass_55_fbf9ee_1x400.png": {
+    "file": "assets/ui-bg_glass_55_fbf9ee_1x400-7a9fbfff.png",
+    "src": "resources/Adminkit/theme/scripts/plugins/system/jquery-ui/css/smoothness/images/ui-bg_glass_55_fbf9ee_1x400.png"
+  },
+  "resources/Adminkit/theme/scripts/plugins/system/jquery-ui/css/smoothness/images/ui-bg_glass_65_ffffff_1x400.png": {
+    "file": "assets/ui-bg_glass_65_ffffff_1x400-c344e87a.png",
+    "src": "resources/Adminkit/theme/scripts/plugins/system/jquery-ui/css/smoothness/images/ui-bg_glass_65_ffffff_1x400.png"
+  },
+  "resources/Adminkit/theme/scripts/plugins/system/jquery-ui/css/smoothness/images/ui-bg_glass_75_dadada_1x400.png": {
+    "file": "assets/ui-bg_glass_75_dadada_1x400-263801cf.png",
+    "src": "resources/Adminkit/theme/scripts/plugins/system/jquery-ui/css/smoothness/images/ui-bg_glass_75_dadada_1x400.png"
+  },
+  "resources/Adminkit/theme/scripts/plugins/system/jquery-ui/css/smoothness/images/ui-bg_glass_75_e6e6e6_1x400.png": {
+    "file": "assets/ui-bg_glass_75_e6e6e6_1x400-b43ae06e.png",
+    "src": "resources/Adminkit/theme/scripts/plugins/system/jquery-ui/css/smoothness/images/ui-bg_glass_75_e6e6e6_1x400.png"
+  },
+  "resources/Adminkit/theme/scripts/plugins/system/jquery-ui/css/smoothness/images/ui-bg_glass_95_fef1ec_1x400.png": {
+    "file": "assets/ui-bg_glass_95_fef1ec_1x400-9d8d9108.png",
+    "src": "resources/Adminkit/theme/scripts/plugins/system/jquery-ui/css/smoothness/images/ui-bg_glass_95_fef1ec_1x400.png"
+  },
+  "resources/Adminkit/theme/scripts/plugins/system/jquery-ui/css/smoothness/images/ui-bg_highlight-soft_75_cccccc_1x100.png": {
+    "file": "assets/ui-bg_highlight-soft_75_cccccc_1x100-e1be4c84.png",
+    "src": "resources/Adminkit/theme/scripts/plugins/system/jquery-ui/css/smoothness/images/ui-bg_highlight-soft_75_cccccc_1x100.png"
+  },
+  "resources/Adminkit/theme/scripts/plugins/system/jquery-ui/css/smoothness/images/ui-icons_222222_256x240.png": {
+    "file": "assets/ui-icons_222222_256x240-a2ccfdc0.png",
+    "src": "resources/Adminkit/theme/scripts/plugins/system/jquery-ui/css/smoothness/images/ui-icons_222222_256x240.png"
+  },
+  "resources/Adminkit/theme/scripts/plugins/system/jquery-ui/css/smoothness/images/ui-icons_2e83ff_256x240.png": {
+    "file": "assets/ui-icons_2e83ff_256x240-a8f038f8.png",
+    "src": "resources/Adminkit/theme/scripts/plugins/system/jquery-ui/css/smoothness/images/ui-icons_2e83ff_256x240.png"
+  },
+  "resources/Adminkit/theme/scripts/plugins/system/jquery-ui/css/smoothness/images/ui-icons_454545_256x240.png": {
+    "file": "assets/ui-icons_454545_256x240-cb36e80b.png",
+    "src": "resources/Adminkit/theme/scripts/plugins/system/jquery-ui/css/smoothness/images/ui-icons_454545_256x240.png"
+  },
+  "resources/Adminkit/theme/scripts/plugins/system/jquery-ui/css/smoothness/images/ui-icons_888888_256x240.png": {
+    "file": "assets/ui-icons_888888_256x240-a42b23e2.png",
+    "src": "resources/Adminkit/theme/scripts/plugins/system/jquery-ui/css/smoothness/images/ui-icons_888888_256x240.png"
+  },
+  "resources/Adminkit/theme/scripts/plugins/system/jquery-ui/css/smoothness/images/ui-icons_cd0a0a_256x240.png": {
+    "file": "assets/ui-icons_cd0a0a_256x240-53f9f6be.png",
+    "src": "resources/Adminkit/theme/scripts/plugins/system/jquery-ui/css/smoothness/images/ui-icons_cd0a0a_256x240.png"
+  },
+  "resources/Adminkit/theme/scripts/plugins/system/jquery-ui/css/smoothness/jquery-ui-1.9.2.custom.min.css": {
+    "file": "assets/jquery-ui-1.9.2.custom.min-4eb8d336.css",
+    "isEntry": true,
+    "src": "resources/Adminkit/theme/scripts/plugins/system/jquery-ui/css/smoothness/jquery-ui-1.9.2.custom.min.css"
+  },
+  "resources/Adminkit/theme/scripts/plugins/system/less.min.js": {
+    "file": "assets/less.min-5b4604a0.js",
+    "isEntry": true,
+    "src": "resources/Adminkit/theme/scripts/plugins/system/less.min.js"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-db85fd99.css",
+    "isEntry": true,
+    "src": "resources/css/app.css"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-39dcccdc.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  },
+  "resources/sass/app.scss": {
+    "file": "assets/app-041e359a.css",
+    "isEntry": true,
+    "src": "resources/sass/app.scss"
+  },
+  "resources/themes/bws/css/ajax-loader.gif": {
+    "file": "assets/ajax-loader-e7b44c86.gif",
+    "src": "resources/themes/bws/css/ajax-loader.gif"
+  },
+  "resources/themes/bws/css/custom-font.css": {
+    "file": "assets/custom-font-6e49384a.css",
+    "isEntry": true,
+    "src": "resources/themes/bws/css/custom-font.css"
+  },
+  "resources/themes/bws/css/font-style.css": {
+    "file": "assets/font-style-749350a0.css",
+    "isEntry": true,
+    "src": "resources/themes/bws/css/font-style.css"
+  },
+  "resources/themes/bws/css/font1/Helvethaica_37thincond.eot": {
+    "file": "assets/Helvethaica_37thincond-9172363b.eot",
+    "src": "resources/themes/bws/css/font1/Helvethaica_37thincond.eot"
+  },
+  "resources/themes/bws/css/font1/Helvethaica_37thincond.svg": {
+    "file": "assets/Helvethaica_37thincond-471e7872.svg",
+    "src": "resources/themes/bws/css/font1/Helvethaica_37thincond.svg"
+  },
+  "resources/themes/bws/css/font1/Helvethaica_37thincond.ttf": {
+    "file": "assets/Helvethaica_37thincond-026df1b2.ttf",
+    "src": "resources/themes/bws/css/font1/Helvethaica_37thincond.ttf"
+  },
+  "resources/themes/bws/css/font1/Helvethaica_37thincond.woff": {
+    "file": "assets/Helvethaica_37thincond-64d6696d.woff",
+    "src": "resources/themes/bws/css/font1/Helvethaica_37thincond.woff"
+  },
+  "resources/themes/bws/css/font1/Helvethaica_47licond.eot": {
+    "file": "assets/Helvethaica_47licond-6347f457.eot",
+    "src": "resources/themes/bws/css/font1/Helvethaica_47licond.eot"
+  },
+  "resources/themes/bws/css/font1/Helvethaica_47licond.svg": {
+    "file": "assets/Helvethaica_47licond-fa125fbe.svg",
+    "src": "resources/themes/bws/css/font1/Helvethaica_47licond.svg"
+  },
+  "resources/themes/bws/css/font1/Helvethaica_47licond.ttf": {
+    "file": "assets/Helvethaica_47licond-76ecef83.ttf",
+    "src": "resources/themes/bws/css/font1/Helvethaica_47licond.ttf"
+  },
+  "resources/themes/bws/css/font1/Helvethaica_47licond.woff": {
+    "file": "assets/Helvethaica_47licond-1e965781.woff",
+    "src": "resources/themes/bws/css/font1/Helvethaica_47licond.woff"
+  },
+  "resources/themes/bws/css/font1/Helvethaica_57cond.eot": {
+    "file": "assets/Helvethaica_57cond-084dd8d4.eot",
+    "src": "resources/themes/bws/css/font1/Helvethaica_57cond.eot"
+  },
+  "resources/themes/bws/css/font1/Helvethaica_57cond.svg": {
+    "file": "assets/Helvethaica_57cond-183577f8.svg",
+    "src": "resources/themes/bws/css/font1/Helvethaica_57cond.svg"
+  },
+  "resources/themes/bws/css/font1/Helvethaica_57cond.ttf": {
+    "file": "assets/Helvethaica_57cond-f6417500.ttf",
+    "src": "resources/themes/bws/css/font1/Helvethaica_57cond.ttf"
+  },
+  "resources/themes/bws/css/font1/Helvethaica_57cond.woff": {
+    "file": "assets/Helvethaica_57cond-33757b16.woff",
+    "src": "resources/themes/bws/css/font1/Helvethaica_57cond.woff"
+  },
+  "resources/themes/bws/css/font1/Helvethaica_58condit.eot": {
+    "file": "assets/Helvethaica_58condit-f533571d.eot",
+    "src": "resources/themes/bws/css/font1/Helvethaica_58condit.eot"
+  },
+  "resources/themes/bws/css/font1/Helvethaica_58condit.svg": {
+    "file": "assets/Helvethaica_58condit-ef14d844.svg",
+    "src": "resources/themes/bws/css/font1/Helvethaica_58condit.svg"
+  },
+  "resources/themes/bws/css/font1/Helvethaica_58condit.ttf": {
+    "file": "assets/Helvethaica_58condit-87451912.ttf",
+    "src": "resources/themes/bws/css/font1/Helvethaica_58condit.ttf"
+  },
+  "resources/themes/bws/css/font1/Helvethaica_58condit.woff": {
+    "file": "assets/Helvethaica_58condit-545fcff2.woff",
+    "src": "resources/themes/bws/css/font1/Helvethaica_58condit.woff"
+  },
+  "resources/themes/bws/css/font1/Helvethaica_67medcond.eot": {
+    "file": "assets/Helvethaica_67medcond-572e5e13.eot",
+    "src": "resources/themes/bws/css/font1/Helvethaica_67medcond.eot"
+  },
+  "resources/themes/bws/css/font1/Helvethaica_67medcond.svg": {
+    "file": "assets/Helvethaica_67medcond-455981ff.svg",
+    "src": "resources/themes/bws/css/font1/Helvethaica_67medcond.svg"
+  },
+  "resources/themes/bws/css/font1/Helvethaica_67medcond.ttf": {
+    "file": "assets/Helvethaica_67medcond-c38f0c78.ttf",
+    "src": "resources/themes/bws/css/font1/Helvethaica_67medcond.ttf"
+  },
+  "resources/themes/bws/css/font1/Helvethaica_67medcond.woff": {
+    "file": "assets/Helvethaica_67medcond-10f22432.woff",
+    "src": "resources/themes/bws/css/font1/Helvethaica_67medcond.woff"
+  },
+  "resources/themes/bws/css/font1/Helvethaica_77bdcond.eot": {
+    "file": "assets/Helvethaica_77bdcond-436ae878.eot",
+    "src": "resources/themes/bws/css/font1/Helvethaica_77bdcond.eot"
+  },
+  "resources/themes/bws/css/font1/Helvethaica_77bdcond.svg": {
+    "file": "assets/Helvethaica_77bdcond-604ad95c.svg",
+    "src": "resources/themes/bws/css/font1/Helvethaica_77bdcond.svg"
+  },
+  "resources/themes/bws/css/font1/Helvethaica_77bdcond.ttf": {
+    "file": "assets/Helvethaica_77bdcond-3b56b0b4.ttf",
+    "src": "resources/themes/bws/css/font1/Helvethaica_77bdcond.ttf"
+  },
+  "resources/themes/bws/css/font1/Helvethaica_77bdcond.woff": {
+    "file": "assets/Helvethaica_77bdcond-30d9979d.woff",
+    "src": "resources/themes/bws/css/font1/Helvethaica_77bdcond.woff"
+  },
+  "resources/themes/bws/css/font1/Helvethaica_87blkcond.eot": {
+    "file": "assets/Helvethaica_87blkcond-2a0c82ce.eot",
+    "src": "resources/themes/bws/css/font1/Helvethaica_87blkcond.eot"
+  },
+  "resources/themes/bws/css/font1/Helvethaica_87blkcond.svg": {
+    "file": "assets/Helvethaica_87blkcond-6f045666.svg",
+    "src": "resources/themes/bws/css/font1/Helvethaica_87blkcond.svg"
+  },
+  "resources/themes/bws/css/font1/Helvethaica_87blkcond.ttf": {
+    "file": "assets/Helvethaica_87blkcond-b89948e9.ttf",
+    "src": "resources/themes/bws/css/font1/Helvethaica_87blkcond.ttf"
+  },
+  "resources/themes/bws/css/font1/Helvethaica_87blkcond.woff": {
+    "file": "assets/Helvethaica_87blkcond-71e52e41.woff",
+    "src": "resources/themes/bws/css/font1/Helvethaica_87blkcond.woff"
+  },
+  "resources/themes/bws/css/fonts/slick.eot": {
+    "file": "assets/slick-06d80cf0.eot",
+    "src": "resources/themes/bws/css/fonts/slick.eot"
+  },
+  "resources/themes/bws/css/fonts/slick.svg": {
+    "file": "assets/slick-12459f22.svg",
+    "src": "resources/themes/bws/css/fonts/slick.svg"
+  },
+  "resources/themes/bws/css/fonts/slick.ttf": {
+    "file": "assets/slick-37bc99cf.ttf",
+    "src": "resources/themes/bws/css/fonts/slick.ttf"
+  },
+  "resources/themes/bws/css/fonts/slick.woff": {
+    "file": "assets/slick-26726bac.woff",
+    "src": "resources/themes/bws/css/fonts/slick.woff"
+  },
+  "resources/themes/bws/css/module-carousel-slick.min.css": {
+    "file": "assets/module-carousel-slick.min-b2b50984.css",
+    "isEntry": true,
+    "src": "resources/themes/bws/css/module-carousel-slick.min.css"
+  },
+  "resources/themes/bws/css/module-charts.min.css": {
+    "file": "assets/module-charts.min-7f6dd339.css",
+    "isEntry": true,
+    "src": "resources/themes/bws/css/module-charts.min.css"
+  },
+  "resources/themes/bws/css/module-colors-alerts.min.css": {
+    "file": "assets/module-colors-alerts.min-02a62026.css",
+    "isEntry": true,
+    "src": "resources/themes/bws/css/module-colors-alerts.min.css"
+  },
+  "resources/themes/bws/css/module-colors-background.min.css": {
+    "file": "assets/module-colors-background.min-21166d5b.css",
+    "isEntry": true,
+    "src": "resources/themes/bws/css/module-colors-background.min.css"
+  },
+  "resources/themes/bws/css/module-colors-buttons.min.css": {
+    "file": "assets/module-colors-buttons.min-a7cd4dfc.css",
+    "isEntry": true,
+    "src": "resources/themes/bws/css/module-colors-buttons.min.css"
+  },
+  "resources/themes/bws/css/module-colors-text.min.css": {
+    "file": "assets/module-colors-text.min-055e73bb.css",
+    "isEntry": true,
+    "src": "resources/themes/bws/css/module-colors-text.min.css"
+  },
+  "resources/themes/bws/css/module-essentials.min.css": {
+    "file": "assets/module-essentials.min-3aa0f362.css",
+    "isEntry": true,
+    "src": "resources/themes/bws/css/module-essentials.min.css"
+  },
+  "resources/themes/bws/css/module-layout.min.css": {
+    "file": "assets/module-layout.min-32a2447f.css",
+    "isEntry": true,
+    "src": "resources/themes/bws/css/module-layout.min.css"
+  },
+  "resources/themes/bws/css/module-maps.min.css": {
+    "file": "assets/module-maps.min-14a9b6f5.css",
+    "isEntry": true,
+    "src": "resources/themes/bws/css/module-maps.min.css"
+  },
+  "resources/themes/bws/css/module-material.min.css": {
+    "file": "assets/module-material.min-a75a55a5.css",
+    "isEntry": true,
+    "src": "resources/themes/bws/css/module-material.min.css"
+  },
+  "resources/themes/bws/css/module-messages.min.css": {
+    "file": "assets/module-messages.min-856ebdf8.css",
+    "isEntry": true,
+    "src": "resources/themes/bws/css/module-messages.min.css"
+  },
+  "resources/themes/bws/css/module-navbar.min.css": {
+    "file": "assets/module-navbar.min-d5db22bc.css",
+    "isEntry": true,
+    "src": "resources/themes/bws/css/module-navbar.min.css"
+  },
+  "resources/themes/bws/css/module-sidebar-skins.min.css": {
+    "file": "assets/module-sidebar-skins.min-2eccbfa2.css",
+    "isEntry": true,
+    "src": "resources/themes/bws/css/module-sidebar-skins.min.css"
+  },
+  "resources/themes/bws/css/module-sidebar.min.css": {
+    "file": "assets/module-sidebar.min-a3c6c3db.css",
+    "isEntry": true,
+    "src": "resources/themes/bws/css/module-sidebar.min.css"
+  },
+  "resources/themes/bws/css/select2-spinner.gif": {
+    "file": "assets/select2-spinner-f6ecff61.gif",
+    "src": "resources/themes/bws/css/select2-spinner.gif"
+  },
+  "resources/themes/bws/css/select2.png": {
+    "file": "assets/select2-d6b5d8d8.png",
+    "src": "resources/themes/bws/css/select2.png"
+  },
+  "resources/themes/bws/css/select2x2.png": {
+    "file": "assets/select2x2-6fe28d68.png",
+    "src": "resources/themes/bws/css/select2x2.png"
+  },
+  "resources/themes/bws/css/style.css": {
+    "file": "assets/style-48d2de24.css",
+    "isEntry": true,
+    "src": "resources/themes/bws/css/style.css"
+  },
+  "resources/themes/bws/css/theme-core.css": {
+    "file": "assets/theme-core-40e7c26e.css",
+    "isEntry": true,
+    "src": "resources/themes/bws/css/theme-core.css"
+  },
+  "resources/themes/bws/css/vendor.min.css": {
+    "file": "assets/vendor.min-c170a8e7.css",
+    "isEntry": true,
+    "src": "resources/themes/bws/css/vendor.min.css"
+  },
+  "resources/themes/bws/fonts/Material-Design-Iconic-Font.eot": {
+    "file": "assets/Material-Design-Iconic-Font-b64375ec.eot",
+    "src": "resources/themes/bws/fonts/Material-Design-Iconic-Font.eot"
+  },
+  "resources/themes/bws/fonts/Material-Design-Iconic-Font.svg": {
+    "file": "assets/Material-Design-Iconic-Font-9409626c.svg",
+    "src": "resources/themes/bws/fonts/Material-Design-Iconic-Font.svg"
+  },
+  "resources/themes/bws/fonts/Material-Design-Iconic-Font.ttf": {
+    "file": "assets/Material-Design-Iconic-Font-d830163b.ttf",
+    "src": "resources/themes/bws/fonts/Material-Design-Iconic-Font.ttf"
+  },
+  "resources/themes/bws/fonts/Material-Design-Iconic-Font.woff": {
+    "file": "assets/Material-Design-Iconic-Font-d8d89e5a.woff",
+    "src": "resources/themes/bws/fonts/Material-Design-Iconic-Font.woff"
+  },
+  "resources/themes/bws/fonts/fontawesome-webfont.eot": {
+    "file": "assets/fontawesome-webfont-cbb644d0.eot",
+    "src": "resources/themes/bws/fonts/fontawesome-webfont.eot"
+  },
+  "resources/themes/bws/fonts/fontawesome-webfont.svg": {
+    "file": "assets/fontawesome-webfont-bfdef833.svg",
+    "src": "resources/themes/bws/fonts/fontawesome-webfont.svg"
+  },
+  "resources/themes/bws/fonts/fontawesome-webfont.ttf": {
+    "file": "assets/fontawesome-webfont-9e540a08.ttf",
+    "src": "resources/themes/bws/fonts/fontawesome-webfont.ttf"
+  },
+  "resources/themes/bws/fonts/fontawesome-webfont.woff": {
+    "file": "assets/fontawesome-webfont-e3870de8.woff",
+    "src": "resources/themes/bws/fonts/fontawesome-webfont.woff"
+  },
+  "resources/themes/bws/fonts/fontawesome-webfont.woff2": {
+    "file": "assets/fontawesome-webfont-aadc3580.woff2",
+    "src": "resources/themes/bws/fonts/fontawesome-webfont.woff2"
+  },
+  "resources/themes/bws/fonts/glyphicons-halflings-regular.eot": {
+    "file": "assets/glyphicons-halflings-regular-13634da8.eot",
+    "src": "resources/themes/bws/fonts/glyphicons-halflings-regular.eot"
+  },
+  "resources/themes/bws/fonts/glyphicons-halflings-regular.svg": {
+    "file": "assets/glyphicons-halflings-regular-42f60659.svg",
+    "src": "resources/themes/bws/fonts/glyphicons-halflings-regular.svg"
+  },
+  "resources/themes/bws/fonts/glyphicons-halflings-regular.ttf": {
+    "file": "assets/glyphicons-halflings-regular-e3950440.ttf",
+    "src": "resources/themes/bws/fonts/glyphicons-halflings-regular.ttf"
+  },
+  "resources/themes/bws/fonts/glyphicons-halflings-regular.woff": {
+    "file": "assets/glyphicons-halflings-regular-a26394f7.woff",
+    "src": "resources/themes/bws/fonts/glyphicons-halflings-regular.woff"
+  },
+  "resources/themes/bws/fonts/glyphicons-halflings-regular.woff2": {
+    "file": "assets/glyphicons-halflings-regular-fe185d11.woff2",
+    "src": "resources/themes/bws/fonts/glyphicons-halflings-regular.woff2"
+  },
+  "resources/themes/bws/fonts/picto-foundry-arrows.eot": {
+    "file": "assets/picto-foundry-arrows-ce8ccd2f.eot",
+    "src": "resources/themes/bws/fonts/picto-foundry-arrows.eot"
+  },
+  "resources/themes/bws/fonts/picto-foundry-arrows.svg": {
+    "file": "assets/picto-foundry-arrows-be2060f6.svg",
+    "src": "resources/themes/bws/fonts/picto-foundry-arrows.svg"
+  },
+  "resources/themes/bws/fonts/picto-foundry-arrows.ttf": {
+    "file": "assets/picto-foundry-arrows-8b6f9ddc.ttf",
+    "src": "resources/themes/bws/fonts/picto-foundry-arrows.ttf"
+  },
+  "resources/themes/bws/fonts/picto-foundry-arrows.woff": {
+    "file": "assets/picto-foundry-arrows-ac1c91fe.woff",
+    "src": "resources/themes/bws/fonts/picto-foundry-arrows.woff"
+  },
+  "resources/themes/bws/fonts/picto-foundry-clothing.eot": {
+    "file": "assets/picto-foundry-clothing-314a78ad.eot",
+    "src": "resources/themes/bws/fonts/picto-foundry-clothing.eot"
+  },
+  "resources/themes/bws/fonts/picto-foundry-clothing.svg": {
+    "file": "assets/picto-foundry-clothing-48848b2c.svg",
+    "src": "resources/themes/bws/fonts/picto-foundry-clothing.svg"
+  },
+  "resources/themes/bws/fonts/picto-foundry-clothing.ttf": {
+    "file": "assets/picto-foundry-clothing-e12bccbe.ttf",
+    "src": "resources/themes/bws/fonts/picto-foundry-clothing.ttf"
+  },
+  "resources/themes/bws/fonts/picto-foundry-clothing.woff": {
+    "file": "assets/picto-foundry-clothing-2cc40d89.woff",
+    "src": "resources/themes/bws/fonts/picto-foundry-clothing.woff"
+  },
+  "resources/themes/bws/fonts/picto-foundry-emotions.eot": {
+    "file": "assets/picto-foundry-emotions-40687d04.eot",
+    "src": "resources/themes/bws/fonts/picto-foundry-emotions.eot"
+  },
+  "resources/themes/bws/fonts/picto-foundry-emotions.svg": {
+    "file": "assets/picto-foundry-emotions-f81721af.svg",
+    "src": "resources/themes/bws/fonts/picto-foundry-emotions.svg"
+  },
+  "resources/themes/bws/fonts/picto-foundry-emotions.ttf": {
+    "file": "assets/picto-foundry-emotions-0904e9fa.ttf",
+    "src": "resources/themes/bws/fonts/picto-foundry-emotions.ttf"
+  },
+  "resources/themes/bws/fonts/picto-foundry-emotions.woff": {
+    "file": "assets/picto-foundry-emotions-e46f4232.woff",
+    "src": "resources/themes/bws/fonts/picto-foundry-emotions.woff"
+  },
+  "resources/themes/bws/fonts/picto-foundry-food.eot": {
+    "file": "assets/picto-foundry-food-b5ff389b.eot",
+    "src": "resources/themes/bws/fonts/picto-foundry-food.eot"
+  },
+  "resources/themes/bws/fonts/picto-foundry-food.svg": {
+    "file": "assets/picto-foundry-food-c2bcbee3.svg",
+    "src": "resources/themes/bws/fonts/picto-foundry-food.svg"
+  },
+  "resources/themes/bws/fonts/picto-foundry-food.ttf": {
+    "file": "assets/picto-foundry-food-907f1c74.ttf",
+    "src": "resources/themes/bws/fonts/picto-foundry-food.ttf"
+  },
+  "resources/themes/bws/fonts/picto-foundry-food.woff": {
+    "file": "assets/picto-foundry-food-c48e4001.woff",
+    "src": "resources/themes/bws/fonts/picto-foundry-food.woff"
+  },
+  "resources/themes/bws/fonts/picto-foundry-general.eot": {
+    "file": "assets/picto-foundry-general-3d618abb.eot",
+    "src": "resources/themes/bws/fonts/picto-foundry-general.eot"
+  },
+  "resources/themes/bws/fonts/picto-foundry-general.svg": {
+    "file": "assets/picto-foundry-general-bfa8a342.svg",
+    "src": "resources/themes/bws/fonts/picto-foundry-general.svg"
+  },
+  "resources/themes/bws/fonts/picto-foundry-general.ttf": {
+    "file": "assets/picto-foundry-general-01b49aa6.ttf",
+    "src": "resources/themes/bws/fonts/picto-foundry-general.ttf"
+  },
+  "resources/themes/bws/fonts/picto-foundry-general.woff": {
+    "file": "assets/picto-foundry-general-a3ed8f82.woff",
+    "src": "resources/themes/bws/fonts/picto-foundry-general.woff"
+  },
+  "resources/themes/bws/fonts/picto-foundry-household.eot": {
+    "file": "assets/picto-foundry-household-b7c55b10.eot",
+    "src": "resources/themes/bws/fonts/picto-foundry-household.eot"
+  },
+  "resources/themes/bws/fonts/picto-foundry-household.svg": {
+    "file": "assets/picto-foundry-household-12a283bb.svg",
+    "src": "resources/themes/bws/fonts/picto-foundry-household.svg"
+  },
+  "resources/themes/bws/fonts/picto-foundry-household.ttf": {
+    "file": "assets/picto-foundry-household-7a2c2154.ttf",
+    "src": "resources/themes/bws/fonts/picto-foundry-household.ttf"
+  },
+  "resources/themes/bws/fonts/picto-foundry-household.woff": {
+    "file": "assets/picto-foundry-household-01fead98.woff",
+    "src": "resources/themes/bws/fonts/picto-foundry-household.woff"
+  },
+  "resources/themes/bws/fonts/picto-foundry-medical-science.eot": {
+    "file": "assets/picto-foundry-medical-science-1bf90a40.eot",
+    "src": "resources/themes/bws/fonts/picto-foundry-medical-science.eot"
+  },
+  "resources/themes/bws/fonts/picto-foundry-medical-science.svg": {
+    "file": "assets/picto-foundry-medical-science-3c660263.svg",
+    "src": "resources/themes/bws/fonts/picto-foundry-medical-science.svg"
+  },
+  "resources/themes/bws/fonts/picto-foundry-medical-science.ttf": {
+    "file": "assets/picto-foundry-medical-science-71490c19.ttf",
+    "src": "resources/themes/bws/fonts/picto-foundry-medical-science.ttf"
+  },
+  "resources/themes/bws/fonts/picto-foundry-medical-science.woff": {
+    "file": "assets/picto-foundry-medical-science-57776b57.woff",
+    "src": "resources/themes/bws/fonts/picto-foundry-medical-science.woff"
+  },
+  "resources/themes/bws/fonts/picto-foundry-multimedia.eot": {
+    "file": "assets/picto-foundry-multimedia-f5dd5691.eot",
+    "src": "resources/themes/bws/fonts/picto-foundry-multimedia.eot"
+  },
+  "resources/themes/bws/fonts/picto-foundry-multimedia.svg": {
+    "file": "assets/picto-foundry-multimedia-00bbf863.svg",
+    "src": "resources/themes/bws/fonts/picto-foundry-multimedia.svg"
+  },
+  "resources/themes/bws/fonts/picto-foundry-multimedia.ttf": {
+    "file": "assets/picto-foundry-multimedia-fd089934.ttf",
+    "src": "resources/themes/bws/fonts/picto-foundry-multimedia.ttf"
+  },
+  "resources/themes/bws/fonts/picto-foundry-multimedia.woff": {
+    "file": "assets/picto-foundry-multimedia-c39a4cbf.woff",
+    "src": "resources/themes/bws/fonts/picto-foundry-multimedia.woff"
+  },
+  "resources/themes/bws/fonts/picto-foundry-nature.eot": {
+    "file": "assets/picto-foundry-nature-8447b02f.eot",
+    "src": "resources/themes/bws/fonts/picto-foundry-nature.eot"
+  },
+  "resources/themes/bws/fonts/picto-foundry-nature.svg": {
+    "file": "assets/picto-foundry-nature-43208cb6.svg",
+    "src": "resources/themes/bws/fonts/picto-foundry-nature.svg"
+  },
+  "resources/themes/bws/fonts/picto-foundry-nature.ttf": {
+    "file": "assets/picto-foundry-nature-6ddf0a82.ttf",
+    "src": "resources/themes/bws/fonts/picto-foundry-nature.ttf"
+  },
+  "resources/themes/bws/fonts/picto-foundry-nature.woff": {
+    "file": "assets/picto-foundry-nature-7226b4b0.woff",
+    "src": "resources/themes/bws/fonts/picto-foundry-nature.woff"
+  },
+  "resources/themes/bws/fonts/picto-foundry-shopping-finance.eot": {
+    "file": "assets/picto-foundry-shopping-finance-e88b9ff1.eot",
+    "src": "resources/themes/bws/fonts/picto-foundry-shopping-finance.eot"
+  },
+  "resources/themes/bws/fonts/picto-foundry-shopping-finance.svg": {
+    "file": "assets/picto-foundry-shopping-finance-b22a2d11.svg",
+    "src": "resources/themes/bws/fonts/picto-foundry-shopping-finance.svg"
+  },
+  "resources/themes/bws/fonts/picto-foundry-shopping-finance.ttf": {
+    "file": "assets/picto-foundry-shopping-finance-8629d2ce.ttf",
+    "src": "resources/themes/bws/fonts/picto-foundry-shopping-finance.ttf"
+  },
+  "resources/themes/bws/fonts/picto-foundry-shopping-finance.woff": {
+    "file": "assets/picto-foundry-shopping-finance-8a28fb6f.woff",
+    "src": "resources/themes/bws/fonts/picto-foundry-shopping-finance.woff"
+  },
+  "resources/themes/bws/fonts/picto-foundry-sports.eot": {
+    "file": "assets/picto-foundry-sports-c7a52be8.eot",
+    "src": "resources/themes/bws/fonts/picto-foundry-sports.eot"
+  },
+  "resources/themes/bws/fonts/picto-foundry-sports.svg": {
+    "file": "assets/picto-foundry-sports-577afa69.svg",
+    "src": "resources/themes/bws/fonts/picto-foundry-sports.svg"
+  },
+  "resources/themes/bws/fonts/picto-foundry-sports.ttf": {
+    "file": "assets/picto-foundry-sports-fa477136.ttf",
+    "src": "resources/themes/bws/fonts/picto-foundry-sports.ttf"
+  },
+  "resources/themes/bws/fonts/picto-foundry-sports.woff": {
+    "file": "assets/picto-foundry-sports-eb5f7d99.woff",
+    "src": "resources/themes/bws/fonts/picto-foundry-sports.woff"
+  },
+  "resources/themes/bws/fonts/picto-foundry-vehicle-navigation.eot": {
+    "file": "assets/picto-foundry-vehicle-navigation-a5189491.eot",
+    "src": "resources/themes/bws/fonts/picto-foundry-vehicle-navigation.eot"
+  },
+  "resources/themes/bws/fonts/picto-foundry-vehicle-navigation.svg": {
+    "file": "assets/picto-foundry-vehicle-navigation-4eaa9d62.svg",
+    "src": "resources/themes/bws/fonts/picto-foundry-vehicle-navigation.svg"
+  },
+  "resources/themes/bws/fonts/picto-foundry-vehicle-navigation.ttf": {
+    "file": "assets/picto-foundry-vehicle-navigation-19459fd4.ttf",
+    "src": "resources/themes/bws/fonts/picto-foundry-vehicle-navigation.ttf"
+  },
+  "resources/themes/bws/fonts/picto-foundry-vehicle-navigation.woff": {
+    "file": "assets/picto-foundry-vehicle-navigation-ac1923f8.woff",
+    "src": "resources/themes/bws/fonts/picto-foundry-vehicle-navigation.woff"
+  },
+  "resources/themes/bws/fonts/picto-foundry-weather.eot": {
+    "file": "assets/picto-foundry-weather-a9d81035.eot",
+    "src": "resources/themes/bws/fonts/picto-foundry-weather.eot"
+  },
+  "resources/themes/bws/fonts/picto-foundry-weather.svg": {
+    "file": "assets/picto-foundry-weather-0f566692.svg",
+    "src": "resources/themes/bws/fonts/picto-foundry-weather.svg"
+  },
+  "resources/themes/bws/fonts/picto-foundry-weather.ttf": {
+    "file": "assets/picto-foundry-weather-13457444.ttf",
+    "src": "resources/themes/bws/fonts/picto-foundry-weather.ttf"
+  },
+  "resources/themes/bws/fonts/picto-foundry-weather.woff": {
+    "file": "assets/picto-foundry-weather-ae420631.woff",
+    "src": "resources/themes/bws/fonts/picto-foundry-weather.woff"
+  },
+  "resources/themes/bws/images/contant.jpg": {
+    "file": "assets/contant-c7c8640e.jpg",
+    "src": "resources/themes/bws/images/contant.jpg"
+  },
+  "resources/themes/bws/images/photodune-6745579-modern-creative-man-relaxing-on-workspace-m.jpg": {
+    "file": "assets/photodune-6745579-modern-creative-man-relaxing-on-workspace-m-1dd0f14a.jpg",
+    "src": "resources/themes/bws/images/photodune-6745579-modern-creative-man-relaxing-on-workspace-m.jpg"
+  },
+  "resources/themes/bws/images/photodune-6745585-modern-creative-workspace-m.jpg": {
+    "file": "assets/photodune-6745585-modern-creative-workspace-m-9efc0d17.jpg",
+    "src": "resources/themes/bws/images/photodune-6745585-modern-creative-workspace-m.jpg"
+  },
+  "resources/themes/bws/images/work.jpg": {
+    "file": "assets/work-55e0b17a.jpg",
+    "src": "resources/themes/bws/images/work.jpg"
+  },
+  "resources/themes/bws/js/module-carousel-slick.min.js": {
+    "file": "assets/module-carousel-slick.min-01920642.js",
+    "isEntry": true,
+    "src": "resources/themes/bws/js/module-carousel-slick.min.js"
+  },
+  "resources/themes/bws/js/module-charts-flot.min.js": {
+    "file": "assets/module-charts-flot.min-6dbd20a5.js",
+    "isEntry": true,
+    "src": "resources/themes/bws/js/module-charts-flot.min.js"
+  },
+  "resources/themes/bws/js/module-essentials.min.js": {
+    "file": "assets/module-essentials.min-65cd9c13.js",
+    "isEntry": true,
+    "src": "resources/themes/bws/js/module-essentials.min.js"
+  },
+  "resources/themes/bws/js/module-layout.min.js": {
+    "file": "assets/module-layout.min-2b8b01d9.js",
+    "isEntry": true,
+    "src": "resources/themes/bws/js/module-layout.min.js"
+  },
+  "resources/themes/bws/js/module-maps-google.min.js": {
+    "file": "assets/module-maps-google.min-bb5cdd73.js",
+    "isEntry": true,
+    "src": "resources/themes/bws/js/module-maps-google.min.js"
+  },
+  "resources/themes/bws/js/module-material.min.js": {
+    "file": "assets/module-material.min-4805b736.js",
+    "isEntry": true,
+    "src": "resources/themes/bws/js/module-material.min.js"
+  },
+  "resources/themes/bws/js/module-messages.min.js": {
+    "file": "assets/module-messages.min-36e63555.js",
+    "isEntry": true,
+    "src": "resources/themes/bws/js/module-messages.min.js"
+  },
+  "resources/themes/bws/js/module-player.min.js": {
+    "file": "assets/module-player.min-a54ee334.js",
+    "isEntry": true,
+    "src": "resources/themes/bws/js/module-player.min.js"
+  },
+  "resources/themes/bws/js/module-sidebar.min.js": {
+    "file": "assets/module-sidebar.min-9dd91edd.js",
+    "isEntry": true,
+    "src": "resources/themes/bws/js/module-sidebar.min.js"
+  },
+  "resources/themes/bws/js/vendor-carousel-slick.min.js": {
+    "file": "assets/vendor-carousel-slick.min-8bd1455c.js",
+    "isEntry": true,
+    "src": "resources/themes/bws/js/vendor-carousel-slick.min.js"
+  },
+  "resources/themes/bws/js/vendor-charts-flot.min.js": {
+    "file": "assets/vendor-charts-flot.min-5a7370cc.js",
+    "isEntry": true,
+    "src": "resources/themes/bws/js/vendor-charts-flot.min.js"
+  },
+  "resources/themes/bws/js/vendor-core.min.js": {
+    "file": "assets/vendor-core.min-bba89c27.js",
+    "isEntry": true,
+    "src": "resources/themes/bws/js/vendor-core.min.js"
+  },
+  "resources/themes/bws/js/vendor-countdown.min.js": {
+    "file": "assets/vendor-countdown.min-2ef08e46.js",
+    "isEntry": true,
+    "src": "resources/themes/bws/js/vendor-countdown.min.js"
+  },
+  "resources/themes/bws/js/vendor-forms.min.js": {
+    "file": "assets/vendor-forms.min-5ec5f674.js",
+    "isEntry": true,
+    "src": "resources/themes/bws/js/vendor-forms.min.js"
+  },
+  "resources/themes/bws/js/vendor-nestable.min.js": {
+    "file": "assets/vendor-nestable.min-02d98492.js",
+    "isEntry": true,
+    "src": "resources/themes/bws/js/vendor-nestable.min.js"
+  },
+  "resources/themes/bws/js/vendor-player.min.js": {
+    "file": "assets/vendor-player.min-47b25098.js",
+    "isEntry": true,
+    "src": "resources/themes/bws/js/vendor-player.min.js"
+  },
+  "resources/themes/bws/js/vendor-tables.min.js": {
+    "file": "assets/vendor-tables.min-afe6f641.js",
+    "isEntry": true,
+    "src": "resources/themes/bws/js/vendor-tables.min.js"
+  },
+  "resources/themes/bws/layerslider/css/blank.gif": {
+    "file": "assets/blank-02d2855c.gif",
+    "src": "resources/themes/bws/layerslider/css/blank.gif"
+  },
+  "resources/themes/bws/layerslider/css/layerslider.css": {
+    "file": "assets/layerslider-535d139f.css",
+    "isEntry": true,
+    "src": "resources/themes/bws/layerslider/css/layerslider.css"
+  },
+  "resources/themes/bws/layerslider/js/greensock.js": {
+    "file": "assets/greensock-efdbbfea.js",
+    "isEntry": true,
+    "src": "resources/themes/bws/layerslider/js/greensock.js"
+  },
+  "resources/themes/bws/layerslider/js/layerslider.kreaturamedia.jquery.js": {
+    "file": "assets/layerslider.kreaturamedia.jquery-38d14329.js",
+    "isEntry": true,
+    "src": "resources/themes/bws/layerslider/js/layerslider.kreaturamedia.jquery.js"
+  },
+  "resources/themes/bws/layerslider/js/layerslider.transitions.js": {
+    "file": "assets/layerslider.transitions-9f4c701c.js",
+    "isEntry": true,
+    "src": "resources/themes/bws/layerslider/js/layerslider.transitions.js"
+  }
+}

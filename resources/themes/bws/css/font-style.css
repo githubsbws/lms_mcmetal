@@ -1,0 +1,108 @@
+@font-face {
+    font-family: 'Helvethaica_37thincond';
+    src: url('font1/Helvethaica_37thincond.eot');
+    src: local('☺'), url('font1/Helvethaica_37thincond.woff') format('woff'), url('font1/Helvethaica_37thincond.ttf') format('truetype'), url('font1/Helvethaica_37thincond.svg') format('svg');
+}
+@font-face {
+    font-family: 'Helvethaica_45li';
+    src: url('font1/Helvethaica_45li.eot');
+    src: local('☺'), url('font1/Helvethaica_45li.woff') format('woff'), url('font1/Helvethaica_45li.ttf') format('truetype'), url('font1/Helvethaica_45li.svg') format('svg');
+    
+}
+@font-face {
+    font-family: 'Helvethaica_47licond';
+    src: url('font1/Helvethaica_47licond.eot');
+    src: local('☺'), url('font1/Helvethaica_47licond.woff') format('woff'), url('font1/Helvethaica_47licond.ttf') format('truetype'), url('font1/Helvethaica_47licond.svg') format('svg');
+    
+}
+@font-face {
+    font-family: 'Helvethaica_57cond';
+    src: url('font1/Helvethaica_57cond.eot');
+    src: local('☺'), url('font1/Helvethaica_57cond.woff') format('woff'), url('font1/Helvethaica_57cond.ttf') format('truetype'), url('font1/Helvethaica_57cond.svg') format('svg');
+    
+}
+@font-face {
+    font-family: 'Helvethaica_58condit';
+    src: url('font1/Helvethaica_58condit.eot');
+    src: local('☺'), url('font1/Helvethaica_58condit.woff') format('woff'), url('font1/Helvethaica_58condit.ttf') format('truetype'), url('font1/Helvethaica_58condit.svg') format('svg');
+    
+}
+@font-face {
+    font-family: 'Helvethaica_67medcond';
+    src: url('font1/Helvethaica_67medcond.eot');
+    src: local('☺'), url('font1/Helvethaica_67medcond.woff') format('woff'), url('font1/Helvethaica_67medcond.ttf') format('truetype'), url('font1/Helvethaica_67medcond.svg') format('svg');
+}
+@font-face {
+    font-family: 'Helvethaica_77bdcond';
+    src: url('font1/Helvethaica_77bdcond.eot');
+    src: local('☺'), url('font1/Helvethaica_77bdcond.woff') format('woff'), url('font1/Helvethaica_77bdcond.ttf') format('truetype'), url('font1/Helvethaica_77bdcond.svg') format('svg');
+}
+@font-face {
+    font-family: 'Helvethaica_87blkcond';
+    src: url('font1/Helvethaica_87blkcond.eot');
+    src: local('☺'), url('font1/Helvethaica_87blkcond.woff') format('woff'), url('font1/Helvethaica_87blkcond.ttf') format('truetype'), url('font1/Helvethaica_87blkcond.svg') format('svg');
+}
+
+.hel37thincond {
+    font-family: Helvethaica_37thincond;
+}
+.hel45li {
+	font-family: Helvethaica_45li;
+}
+.hel47licond {
+    font-family: Helvethaica_47licond;
+}
+.hel57cond {
+	font-family: Helvethaica_57cond;
+}
+.hel58condit {
+	font-family: Helvethaica_58condit;
+}
+.hel67medcond {
+	font-family: Helvethaica_67medcond;
+}
+.hel77bdcond {
+	font-family: Helvethaica_77bdcond;
+}
+.hel87blkcond {
+	font-family: Helvethaica_87blkcond;
+}
+
+.fsize18 {
+	font-size: 18px;
+}
+.fsize20 {
+	font-size: 20px;
+}
+.fsize25 {
+	font-size: 25px;
+}
+.fsize29 {
+	font-size: 29px;
+}
+.fsize30 {
+	font-size: 30px;
+}
+.fsize33 {
+	font-size: 33px;
+}
+.fsize34 {
+	font-size: 34px;
+}
+.fsize41dot5 {
+	font-size: 41.5px;
+}
+.fsize50 {
+	font-size: 50px;
+}
+.fsize55 {
+	font-size: 55px;
+}
+
+.hel45li, .hel57cond, .hel67medcond, .hel77bdcond, .hel87blkcond {
+	font-weight: normal !important;
+    font-style: normal !important;
+}
+a.hel45li, a.hel57cond, a.hel67medcond, a.hel77bdcond, a.hel87blkcond {
+	text-decoration: none;
+}

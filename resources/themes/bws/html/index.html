@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html class="transition-navbar-scroll top-navbar-xlarge bottom-footer" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Learning</title>
+    <!-- Compressed Vendor BUNDLE
+    Includes vendor (3rd party) styling such as the customized Bootstrap and other 3rd party libraries used for the current theme/module -->
+    <link href="css/vendor.min.css" rel="stylesheet">
+    <!-- Compressed Theme BUNDLE
+Note: The bundle includes all the custom styling required for the current theme, however
+it was tweaked for the current theme/module and does NOT include ALL of the standalone modules;
+The bundle was generated using modern frontend development tools that are provided with the package
+To learn more about the development process, please refer to the documentation. -->
+    <!-- <link href="css/theme.bundle.min.css" rel="stylesheet"> -->
+    <!-- Compressed Theme CORE
+This variant is to be used when loading the separate styling modules -->
+    <link href="css/theme-core.min.css" rel="stylesheet">
+    <!-- Standalone Modules
+    As a convenience, we provide the entire UI framework broke down in separate modules
+    Some of the standalone modules may have not been used with the current theme/module
+    but ALL modules are 100% compatible -->
+    <link href="css/module-essentials.min.css" rel="stylesheet" />
+    <link href="css/module-material.min.css" rel="stylesheet" />
+    <link href="css/module-layout.min.css" rel="stylesheet" />
+    <link href="css/module-sidebar.min.css" rel="stylesheet" />
+    <link href="css/module-sidebar-skins.min.css" rel="stylesheet" />
+    <link href="css/module-navbar.min.css" rel="stylesheet" />
+    <link href="css/module-messages.min.css" rel="stylesheet" />
+    <link href="css/module-carousel-slick.min.css" rel="stylesheet" />
+    <link href="css/module-charts.min.css" rel="stylesheet" />
+    <link href="css/module-maps.min.css" rel="stylesheet" />
+    <link href="css/module-colors-alerts.min.css" rel="stylesheet" />
+    <link href="css/module-colors-background.min.css" rel="stylesheet" />
+    <link href="css/module-colors-buttons.min.css" rel="stylesheet" />
+    <link href="css/module-colors-text.min.css" rel="stylesheet" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!-- If you don't need support for Internet Explorer <= 8 you can safely remove these -->
+    <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+	<style type="text/css">
+		.box-news{
+			height: 155px;
+			overflow: hidden;
+		}
+		.box-course{
+			height: 124px;
+			overflow: hidden;
+		}
+		.text-headline{
+			font-size: 18px;
+		}
+	</style>
+</head>
+<body>
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top navbar-size-large navbar-size-xlarge paper-shadow" data-z="0" data-animated role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="navbar-brand navbar-brand-logo">
+                    <a href="index.html">
+                        <img src="./images/brotherlogo.png">
+                    </a>
+                </div>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="main-nav">
+                <ul class="nav navbar-nav navbar-nav-margin-left">
+                    <li class="dropdown active">
+                        <a href="#">หน้าแรก</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="website-directory-grid.html">บทเรียน</a>
+                    </li>
+                </ul>
+                <div class="navbar-right">
+                    <ul class="nav navbar-nav navbar-nav-bordered navbar-nav-margin-right">
+                        <!-- user -->
+                        <li class="dropdown user">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="images/people/110/woman-3.jpg" alt="" class="img-circle" /> ปาริฉัตร แสงขำ<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="website-student-dashboard.html"><i class="fa fa-bar-chart-o"></i> Dashboard</a></li>
+                                <li><a href="website-student-courses.html"><i class="fa fa-mortar-board"></i> บทเรียนของฉัน</a></li>
+                                <li><a href="website-student-profile.html"><i class="fa fa-user"></i> โปรไฟล์</a></li>
+                                <li><a href="login.html"><i class="fa fa-sign-out"></i> ออกจากระบบ</a></li>
+                            </ul>
+                        </li>
+                        <!-- // END user -->
+                    </ul>
+                    <a href="login.html" class="navbar-btn btn btn-primary">เข้าสู่ระบบ</a>
+                </div>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+    </div>
+    <div class="parallax cover overlay cover-image-full home">
+        <img class="parallax-layer" src="images/elearning-banner6.png" alt="Learning Cover" />
+        <div class="parallax-layer overlay overlay-full overlay-bg-white bg-transparent" data-speed="8" data-opacity="true">
+            <div class="v-center">
+                <div class="page-section overlay-bg-white-strong relative paper-shadow" data-z="1">
+                    <h1 class="text-display-2 margin-v-0-15 display-inline-block">Brother E-learning System</h1>
+                    <p class="text-subhead">หลักสูตรสำหรับช่าง เพื่อการเรียนการซ่อมบำรุงผลิตภัณฑ์</p>
+                    <!-- <a class="btn btn-green-500 btn-lg paper-shadow" data-hover-z="2" data-animated data-toggle="modal" href="#modal-overlay-signup">Sign Up - Only &dollar;19.00/mo</a> -->
+                    <a class="btn btn-green-500 btn-lg paper-shadow" href="login.html">เข้าสู่ระบบ</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="page-section-heading">
+            <h2 class="text-display-1">ข่าวสาร</h2>
+            <p class="lead text-muted">ข่าวสาร กิจกรรม และประกาศต่าง ๆ</p>
+        </div>
+        <div class="row" data-toggle="gridalicious">
+            <div class="media">
+                <div class="media-left padding-none">
+                    <div class="bg-green-300 text-white">
+                        <div class="panel-body">
+                            <i class="fa fa-newspaper-o fa-2x fa-fw"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="media-body">
+                    <div class="panel panel-default box-news">
+                        <div class="panel-body">
+                            <div class="text-headline">Delisting and cancellation</div>
+                            <p>Further to the announcement made by Nikon Corporation and Optos plc (Optos) on 22 May 2015 that the Scheme has become effective in accordance ...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="media">
+                <div class="media-left padding-none">
+                    <div class="bg-purple-300 text-white">
+                        <div class="panel-body">
+                            <i class="fa fa-newspaper-o fa-2x fa-fw"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="media-body">
+                    <div class="panel panel-default box-news">
+                        <div class="panel-body">
+                            <div class="text-headline">Scheme becomes effective</div>
+                            <p>Further to the announcement made by Nikon Corporation and Optos plc (Optos) on 22 May 2015 that the Scheme has become effective in accordance ...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="media">
+                <div class="media-left padding-none">
+                    <div class="bg-orange-400 text-white">
+                        <div class="panel-body">
+                            <i class="fa fa-newspaper-o fa-2x fa-fw"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="media-body">
+                    <div class="panel panel-default box-news">
+                        <div class="panel-body">
+                            <div class="text-headline">Court Sanction of the Scheme</div>
+                            <p>Further to the announcement made by Nikon Corporation and Optos plc (Optos) on 22 May 2015 that the Scheme has become effective in accordance ...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="media">
+                <div class="media-left padding-none">
+                    <div class="bg-cyan-400 text-white">
+                        <div class="panel-body">
+                            <i class="fa fa-newspaper-o fa-2x fa-fw"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="media-body">
+                    <div class="panel panel-default box-news">
+                        <div class="panel-body">
+                            <div class="text-headline">Suspension of listing and trading</div>
+                            <p>Further to the announcement made by Nikon Corporation and Optos plc (Optos) on 22 May 2015 that the Scheme has become effective in accordance ...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="media">
+                <div class="media-left padding-none">
+                    <div class="bg-pink-400 text-white">
+                        <div class="panel-body">
+                            <i class="fa fa-newspaper-o fa-2x fa-fw"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="media-body">
+                    <div class="panel panel-default box-news">
+                        <div class="panel-body">
+                            <div class="text-headline">Anti-trust Conditions Satisfied</div>
+                            <p>Further to the announcement made by Nikon Corporation and Optos plc (Optos) on 22 May 2015 that the Scheme has become effective in accordance ...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="media box-news">
+                <div class="media-left padding-none">
+                    <div class="bg-red-400 text-white">
+                        <div class="panel-body">
+                            <i class="fa fa-newspaper-o fa-2x fa-fw"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="media-body">
+                    <div class="panel panel-default box-news">
+                        <div class="panel-body">
+                            <div class="text-headline">Brother Donates 2 Million</div>
+                            <p>Further to the announcement made by Nikon Corporation and Optos plc (Optos) on 22 May 2015 that the Scheme has become effective in accordance ...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="page-section bg-white">
+        <div class="container">
+            <div class="text-center">
+                <h3 class="text-display-1">บทเรียน</h3>
+                <p class="lead text-muted">บทเรียน และหลักสูตรต่าง ๆ ในระบบ</p>
+            </div>
+            <br/>
+            <div class="slick-basic slick-slider" data-items="4" data-items-lg="3" data-items-md="2" data-items-sm="1" data-items-xs="1">
+                <div class="item">
+                    <div class="panel panel-default paper-shadow box-course" data-z="0.5" data-hover-z="1" data-animated>
+                        <div class="panel-body">
+                            <div class="media media-clearfix-xs">
+                                <div class="media-left">
+                                    <div class="cover width-90 width-100pc-xs overlay cover-image-full hover">
+                                        <span class="img icon-block s90 bg-default"></span>
+                                        <span class="overlay overlay-full padding-none icon-block s90 bg-default">
+                        <span class="v-center">
+                            <img src="./images/brotherlogo.png" class="img-responsive">
+                        </span>
+                                        </span>
+                                        <a href="website-course.html" class="overlay overlay-full overlay-hover overlay-bg-white">
+                                            <span class="v-center">
+                            <span class="btn btn-circle btn-white btn-lg"><i class="fa fa-graduation-cap"></i></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading margin-v-5-3"><a href="website-course.html">
+                                    Color Technologies For ASCs
+                                    </a></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="panel panel-default paper-shadow box-course" data-z="0.5" data-hover-z="1" data-animated>
+                        <div class="panel-body">
+                            <div class="media media-clearfix-xs">
+                                <div class="media-left">
+                                    <div class="cover width-90 width-100pc-xs overlay cover-image-full hover">
+                                        <span class="img icon-block s90 bg-default"></span>
+                                        <span class="overlay overlay-full padding-none icon-block s90 bg-default">
+                        <span class="v-center">
+                            <img src="./images/brotherlogo.png" class="img-responsive">
+                        </span>
+                                        </span>
+                                        <a href="website-course.html" class="overlay overlay-full overlay-hover overlay-bg-white">
+                                            <span class="v-center">
+                            <span class="btn btn-circle btn-white btn-lg"><i class="fa fa-graduation-cap"></i></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading margin-v-5-3"><a href="website-course.html">Direct Thermal and Thermal Transfer</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="panel panel-default paper-shadow box-course" data-z="0.5" data-hover-z="1" data-animated>
+                        <div class="panel-body">
+                            <div class="media media-clearfix-xs">
+                                <div class="media-left">
+                                    <div class="cover width-90 width-100pc-xs overlay cover-image-full hover">
+                                        <span class="img icon-block s90 bg-default"></span>
+                                        <span class="overlay overlay-full padding-none icon-block s90 bg-default">
+                        <span class="v-center">
+                            <img src="./images/brotherlogo.png" class="img-responsive">
+                        </span>
+                                        </span>
+                                        <a href="website-course.html" class="overlay overlay-full overlay-hover overlay-bg-white">
+                                            <span class="v-center">
+                            <span class="btn btn-circle btn-white btn-lg"><i class="fa fa-graduation-cap"></i></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading margin-v-5-3"><a href="website-course.html">Mono Laser Technology</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="panel panel-default paper-shadow box-course" data-z="0.5" data-hover-z="1" data-animated>
+                        <div class="panel-body">
+                            <div class="media media-clearfix-xs">
+                                <div class="media-left">
+                                    <div class="cover width-90 width-100pc-xs overlay cover-image-full hover">
+                                        <span class="img icon-block s90 bg-default"></span>
+                                        <span class="overlay overlay-full padding-none icon-block s90 bg-default">
+                        <span class="v-center">
+                            <img src="./images/brotherlogo.png" class="img-responsive">
+                        </span>
+                                        </span>
+                                        <a href="website-course.html" class="overlay overlay-full overlay-hover overlay-bg-white">
+                                            <span class="v-center">
+                            <span class="btn btn-circle btn-white btn-lg"><i class="fa fa-graduation-cap"></i></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading margin-v-5-3"><a href="website-course.html">Basic course BHM11</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="panel panel-default paper-shadow box-course" data-z="0.5" data-hover-z="1" data-animated>
+                        <div class="panel-body">
+                            <div class="media media-clearfix-xs">
+                                <div class="media-left">
+                                    <div class="cover width-90 width-100pc-xs overlay cover-image-full hover">
+                                        <span class="img icon-block s90 bg-default"></span>
+                                        <span class="overlay overlay-full padding-none icon-block s90 bg-default">
+                        <span class="v-center">
+                            <img src="./images/brotherlogo.png" class="img-responsive">
+                        </span>
+                                        </span>
+                                        <a href="website-course.html" class="overlay overlay-full overlay-hover overlay-bg-white">
+                                            <span class="v-center">
+                            <span class="btn btn-circle btn-white btn-lg"><i class="fa fa-graduation-cap"></i></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading margin-v-5-3"><a href="website-course.html">
+                                    Color Technologies For ASCs
+                                    </a></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="panel panel-default paper-shadow box-course" data-z="0.5" data-hover-z="1" data-animated>
+                        <div class="panel-body">
+                            <div class="media media-clearfix-xs">
+                                <div class="media-left">
+                                    <div class="cover width-90 width-100pc-xs overlay cover-image-full hover">
+                                        <span class="img icon-block s90 bg-default"></span>
+                                        <span class="overlay overlay-full padding-none icon-block s90 bg-default">
+                        <span class="v-center">
+                            <img src="./images/brotherlogo.png" class="img-responsive">
+                        </span>
+                                        </span>
+                                        <a href="website-course.html" class="overlay overlay-full overlay-hover overlay-bg-white">
+                                            <span class="v-center">
+                            <span class="btn btn-circle btn-white btn-lg"><i class="fa fa-graduation-cap"></i></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading margin-v-5-3"><a href="website-course.html">Direct Thermal and Thermal Transfer</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="panel panel-default paper-shadow box-course" data-z="0.5" data-hover-z="1" data-animated>
+                        <div class="panel-body">
+                            <div class="media media-clearfix-xs">
+                                <div class="media-left">
+                                    <div class="cover width-90 width-100pc-xs overlay cover-image-full hover">
+                                        <span class="img icon-block s90 bg-default"></span>
+                                        <span class="overlay overlay-full padding-none icon-block s90 bg-default">
+                        <span class="v-center">
+                            <img src="./images/brotherlogo.png" class="img-responsive">
+                        </span>
+                                        </span>
+                                        <a href="website-course.html" class="overlay overlay-full overlay-hover overlay-bg-white">
+                                            <span class="v-center">
+                            <span class="btn btn-circle btn-white btn-lg"><i class="fa fa-graduation-cap"></i></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading margin-v-5-3"><a href="website-course.html">Mono Laser Technology</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="panel panel-default paper-shadow box-course" data-z="0.5" data-hover-z="1" data-animated>
+                        <div class="panel-body">
+                            <div class="media media-clearfix-xs">
+                                <div class="media-left">
+                                    <div class="cover width-90 width-100pc-xs overlay cover-image-full hover">
+                                        <span class="img icon-block s90 bg-default"></span>
+                                        <span class="overlay overlay-full padding-none icon-block s90 bg-default">
+                        <span class="v-center">
+                            <img src="./images/brotherlogo.png" class="img-responsive">
+                        </span>
+                                        </span>
+                                        <a href="website-course.html" class="overlay overlay-full overlay-hover overlay-bg-white">
+                                            <span class="v-center">
+                            <span class="btn btn-circle btn-white btn-lg"><i class="fa fa-graduation-cap"></i></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading margin-v-5-3"><a href="website-course.html">Basic course BHM11</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                
+            </div>
+            <div class="text-center">
+                <br/>
+                <a class="btn btn-lg btn-primary" href="website-directory-grid.html">บทเรียนทั้งหมด</a>
+            </div>
+        </div>
+    </div>
+    
+    <section class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-3">
+                    <h4 class="text-headline text-light">Corporate</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#">เกี่ยวกับบริษัท</a></li>
+                        <li><a href="#">เงื่อนไขการใช้งาน</a></li>
+                        <li><a href="#">ติดต่อเรา</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <h4 class="text-headline text-light">การเรียน</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="">บทเรียน</a></li>
+                        <li><a href="">สมัครสมาชิก</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <br/>
+                    <p>
+                        <a href="#" class="btn btn-indigo-500 btn-circle"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="btn btn-pink-500 btn-circle"><i class="fa fa-dribbble"></i></a>
+                        <a href="#" class="btn btn-blue-500 btn-circle"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="btn btn-danger btn-circle"><i class="fa fa-google-plus"></i></a>
+                    </p>
+                    <p class="text-subhead">
+                        &copy; 2015 Brother E-learning System.
+                    </p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <strong>Brother E-learning System</strong> &copy; Copyright 2015
+    </footer>
+    <!-- // Footer -->
+    <!-- Inline Script for colors and config objects; used by various external scripts; -->
+    <script>
+    var colors = {
+        "danger-color": "#e74c3c",
+        "success-color": "#81b53e",
+        "warning-color": "#f0ad4e",
+        "inverse-color": "#2c3e50",
+        "info-color": "#2d7cb5",
+        "default-color": "#6e7882",
+        "default-light-color": "#cfd9db",
+        "purple-color": "#9D8AC7",
+        "mustard-color": "#d4d171",
+        "lightred-color": "#e15258",
+        "body-bg": "#f6f6f6"
+    };
+    var config = {
+        theme: "html",
+        skins: {
+            "default": {
+                "primary-color": "#42a5f5"
+            }
+        }
+    };
+    </script>
+    <!-- Separate Vendor Script Bundles -->
+    <script src="js/vendor-core.min.js"></script>
+    <script src="js/vendor-countdown.min.js"></script>
+    <script src="js/vendor-tables.min.js"></script>
+    <script src="js/vendor-forms.min.js"></script>
+    <script src="js/vendor-carousel-slick.min.js"></script>
+    <script src="js/vendor-player.min.js"></script>
+    <script src="js/vendor-charts-flot.min.js"></script>
+    <script src="js/vendor-nestable.min.js"></script>
+    <!-- <script src="js/vendor-angular.min.js"></script> -->
+    <!-- Compressed Vendor Scripts Bundle
+    Includes all of the 3rd party JavaScript libraries above.
+    The bundle was generated using modern frontend development tools that are provided with the package
+    To learn more about the development process, please refer to the documentation.
+    Do not use it simultaneously with the separate bundles above. -->
+    <!-- <script src="js/vendor-bundle-all.min.js"></script> -->
+    <!-- Compressed App Scripts Bundle
+    Includes Custom Application JavaScript used for the current theme/module;
+    Do not use it simultaneously with the standalone modules below. -->
+    <!-- <script src="js/module-bundle-main.min.js"></script> -->
+    <!-- Standalone Modules
+    As a convenience, we provide the entire UI framework broke down in separate modules
+    Some of the standalone modules may have not been used with the current theme/module
+    but ALL the modules are 100% compatible -->
+    <script src="js/module-essentials.min.js"></script>
+    <script src="js/module-material.min.js"></script>
+    <script src="js/module-layout.min.js"></script>
+    <script src="js/module-sidebar.min.js"></script>
+    <script src="js/module-carousel-slick.min.js"></script>
+    <script src="js/module-player.min.js"></script>
+    <script src="js/module-messages.min.js"></script>
+    <script src="js/module-maps-google.min.js"></script>
+    <script src="js/module-charts-flot.min.js"></script>
+    <!-- [html] Core Theme Script:
+        Includes the custom JavaScript for this theme/module;
+        The file has to be loaded in addition to the UI modules above;
+        module-bundle-main.js already includes theme-core.js so this should be loaded
+        ONLY when using the standalone modules; -->
+    <script src="js/theme-core.min.js"></script>
+</body>
+</html>
