@@ -44,6 +44,7 @@ use App\Http\Controllers\ReportExcelController;
 //-------
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CourseExamController;
+use App\Http\Controllers\LibraryOnlineController;
 use App\Http\Controllers\LicensePersonController;
 use App\Http\Controllers\PotentialReportController;
 use App\Http\Controllers\RoadmapController;
@@ -854,6 +855,8 @@ Route::post('/licenseperson/operate/import',[LicensePersonController::class, 'op
 
 Route::get('/licenseperson/parameter',[LicensePersonController::class, 'indexParameter'])->name('license.parameter.index');
 Route::post('/licenseperson/parameter/import',[LicensePersonController::class, 'parameterImportExcel'])->name('license.parameter.excel');
+
+Route::get('/library-online',[LibraryOnlineController::class, 'index'])->name('library_online')->middleware('checkIdleTimeout');
 
 
 Route::middleware(['auth.admin'])->group(function(){
