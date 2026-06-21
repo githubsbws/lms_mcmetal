@@ -203,28 +203,38 @@ class CourseService
             $hasQuestions = $course->groupTesting?->questions?->isNotEmpty() ?? false;
 
             $examStep = $hasQuestions ? 1 : 0;
-            $totalSteps    = $totalLessons + $examStep; // +1 ข้อสอบ
+            $pretestStep = $hasQuestions ? 1 : 0;
+
+            $totalSteps    = $totalLessons + $examStep + $pretestStep; // +1 ข้อสอบ +1 pretest
 
             $passedLessons = $course->lesson
                 ->filter(fn($lesson) => $lesson->learn->first()?->lesson_status === 'pass')
                 ->count();
 
             $userScores = $course->courseScore->sortBy('score_id');
+            $preScores = $userScores->where('exam_type', 'pre');
+            $postScores = $userScores->where('exam_type', 'post');
 
-            // 2. เช็คว่ามีประวัติการสอบที่สถานะเป็น 'pass' ไหม
-            $hasPassed = $userScores->where('score_status', 'pass')->isNotEmpty();
-            $hasWait = $userScores->where('score_status', 'wait')->isNotEmpty();
+            //เช็คว่าสอบ pretest ไหม (ถ้ามี) เพื่อใช้ในการแสดงผลที่หน้า course ว่าเคยสอบแล้วหรือยัง
+            $hasScorePretest = $preScores->isNotEmpty();
+            // เช็คว่ามีประวัติการสอบที่สถานะเป็น 'pass' ไหม (post เท่านั้น)
+
+            $hasPassed = $postScores->where('score_status', 'pass')->isNotEmpty();
+            $hasWait = $postScores->where('score_status', 'wait')->isNotEmpty();
             $examPassed = $hasPassed ? 1 : 0;
 
-            $attemptedCount = $userScores->count();
+            $attemptedCount = $postScores->count();
             $maxAttempts = 1 + (int)($course->course_retest_amount ?? 0);
 
 
+            $pretestPassed = $preScores->where('score_status', 'pass')->isNotEmpty() ? 1 : 0;
             $course->progress = $totalSteps > 0
-                ? (int) round(($passedLessons + $examPassed) / $totalSteps * 100)
+                ? (int) round(($passedLessons + $examPassed + $pretestPassed) / $totalSteps * 100)
                 : 0;
             // 5. บันทึกสถานะการสอบลงตัวแปร Object เพื่อส่งให้ Blade ใช้ง่ายๆ
-            $course->all_exam_scores = $userScores;
+            $course->all_score_pretest = $hasScorePretest; // สอบpretest
+            $course->all_exam_scores = $postScores;
+            $course->all_pretest_scores = $preScores;
             $course->exam_has_passed = $hasPassed; // ผ่านแล้วหรือยัง
             $course->score_has_wait  = $hasWait; //รอคะแนนสอบ
             $course->exam_attempts   = $attemptedCount; // สอบไปแล้วกี่ครั้ง
@@ -235,7 +245,8 @@ class CourseService
             $course->can_exam = ($totalLessons > 0 && $passedLessons >= $totalLessons)
                                 && !$hasPassed
                                 && ($attemptedCount < $maxAttempts)
-                                && $hasQuestions;
+                                && $hasQuestions
+                                && $hasScorePretest;
 
             $examType = $course->groupTesting?->questions->first()?->ques_type;
             $course->exam_type = $examType; // 2=ปรนัย, 3=อัตนัย

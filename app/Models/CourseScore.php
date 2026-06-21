@@ -24,7 +24,8 @@ class CourseScore extends Model
        'score_status',
        'active',
        'create_date',
-       'pass_year'
+       'pass_year',
+       'exam_type'
     ];
 
 

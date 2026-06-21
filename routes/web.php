@@ -139,6 +139,7 @@ Route::post('/lms_brother_docker/lms/app/index/user/recovery',[ForgotController:
 Route::get('course',[CourseController::class,'course'])->name('course')->middleware('checkIdleTimeout');
 //เข้าหน้าสอบ
 Route::get('course/exam/multiple/{course_id}', [CourseExamController::class, 'multipleExam'])->name('course.exam.multiple')->middleware('checkIdleTimeout');
+Route::get('course/exam/pretest/{course_id}', [CourseExamController::class, 'multipleExam'])->name('course.exam.pretest')->middleware('checkIdleTimeout');
 Route::get('course/exam/essay/{course_id}', [CourseExamController::class, 'essayExam'])->name('course.exam.essay')->middleware('checkIdleTimeout');
 //บันทึกการสอบ
 Route::post('course/exam/multiple/submit/{course_id}', [CourseExamController::class, 'multipleExamSubmit'])->name('course.exam.submit-multiple')->middleware('checkIdleTimeout');

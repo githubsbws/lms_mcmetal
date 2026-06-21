@@ -3,13 +3,14 @@
 @section('content')
 @php
     $questions = $course->groupTesting->questions->shuffle();
+    $EXAM_PRETEST = 'pre';
 @endphp
 <div class="d-flex flex-column" style="min-height: 100vh;">
     <div class="container" style="max-width: 900px; padding-top: 110px; padding-bottom: 50px;">
 
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 2px solid #e2e8f0;">
             <div class="row timer-container">
-                <small style="color: #64748b; font-size: 24px;">แบบทดสอบ Final Exam (ปรนัย)</small>
+                <small style="color: #64748b; font-size: 24px;">{{ $examType === $EXAM_PRETEST ? 'แบบทดสอบก่อนเรียน (Pre-test)' : 'แบบทดสอบ Final Exam (ปรนัย)' }}</small>
             </div>
             <div>
                 <h2 id="timer-display">--:--</h2>
@@ -19,10 +20,11 @@
             </div>
         </div>
 
-        <form action="{{ route('course.exam.submit-multiple', $course->course_id) }}" method="POST" id="exam-form">
+        <form action="{{ route('course.exam.submit-multiple', [$course->course_id]) }}" method="POST" id="exam-form">
             @csrf
             <input type="hidden" name="exam_session_id" value="{{ $course->exam_session->id }}">
             <input type="hidden" name="is_timeout" id="is_timeout" value="0">
+            <input type="hidden" name="exam_type" value="{{ $examType }}">
 
             @foreach($questions as $index => $question)
             <div id="question-card-{{ $index }}"
