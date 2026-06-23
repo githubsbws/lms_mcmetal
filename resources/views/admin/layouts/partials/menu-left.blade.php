@@ -694,6 +694,16 @@ use App\Helpers\PermissionHelper;
                     </ul>
                 </li>
                 @endcanmenu --}}
+                @canmenu(27)
+                    <li class="nav-item {{ request()->is('library*') ? 'menu-open' : '' }}">
+                    <a href="{{ route('admin.library.online') }}" class="nav-link {{ request()->is('library*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-book"></i>
+                        <p>
+                            ระบบห้องสมุดออนไลน์
+                        </p>
+                    </a>
+                </li>
+                @endcanmenu
                 <li class="nav-item">
                     <a href="{{ route('logout.admin')}}" class="nav-link">
                         <i class="nav-icon fas fa-sign-out-alt"></i>

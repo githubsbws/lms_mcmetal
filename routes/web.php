@@ -45,6 +45,7 @@ use App\Http\Controllers\ReportExcelController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CourseExamController;
 use App\Http\Controllers\LibraryOnlineController;
+use App\Http\Controllers\Admin\LibraryOnlineController as AdminLibraryOnlineController;
 use App\Http\Controllers\LicensePersonController;
 use App\Http\Controllers\PotentialReportController;
 use App\Http\Controllers\RoadmapController;
@@ -598,7 +599,7 @@ Route::post('/imgslide_update/{imgslide_id}',[AdminController::class,'imgslide_u
 Route::post('/imgslide_delete/{imgslide_id}',[AdminController::class,'imgslide_delete'])->name('imgslide_delete')->middleware('checkIdleTimeout');
 Route::get('/imgslide_edit/{imgslide_id}',[AdminController::class,'imgslide_edit'])->name('imgslide_edit')->middleware('checkIdleTimeout');
 //
-
+Route::get('/library/mangement',[AdminLibraryOnlineController::class,'index'])->name('admin.library.online')->middleware('checkIdleTimeout');
 Route::get('/librarytype',[AdminController::class,'librarytype'])->name('librarytype')->middleware('checkIdleTimeout');
 
 Route::get('/libraryfile',[AdminController::class,'libraryfile'])->name('libraryfile')->middleware('checkIdleTimeout');
