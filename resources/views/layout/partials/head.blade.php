@@ -105,7 +105,7 @@ use App\Models\Usability;
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toyoseikan E-learning System</title>
+    <title>MC-Metal E-learning System</title>
     <link href="{{asset('themes/bws/js/vender/video-js/video-js.css')}}" rel="stylesheet">
     <link href="{{asset('themes/bws/js/vender/video-js/video-js.min.css')}}" rel="stylesheet">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -196,6 +196,9 @@ use App\Models\Usability;
                     <li class="dropdown">
                         <a href="{{url('dashboard')}}">แดชบอร์ด</a>
                     </li>
+                    <li class="dropdown">
+                        <a href="{{ route('library_online') }}">ห้องสมุดออนไลน์</a>
+                    </li>
                     @endif
                     </li>
                        <li class="dropdown">
@@ -208,6 +211,7 @@ use App\Models\Usability;
                     <li class="dropdown">
                         <a href="{{ route('site.contactus') }}">ติดต่อเรา</a>
                     </li>
+
 
                 </ul>
                 @if(Auth::check())

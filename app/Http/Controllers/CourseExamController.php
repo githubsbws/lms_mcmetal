@@ -15,10 +15,11 @@ class CourseExamController extends Controller
     {
         if(Auth::check()){
             try{
+                $examType = $request->query('exam_type');
                 session(['exam_from_page' => $request->query('page', 1)]);
-                $course = $this->courseExamService->getMultipleChoiceExam($course_id);
+                $course = $this->courseExamService->getMultipleChoiceExam($course_id,$examType);
 
-                return view('course.exam.exam-multiple',compact('course'));
+                return view('course.exam.exam-multiple',compact('course','examType'));
             }catch(\Exception $e){
                 $page = session('exam_from_page', 1);
                 // 🚨 พอ Service "โยน (throw)" มา Controller จะ "รับ (catch)" ไว้ตรงนี้
@@ -70,9 +71,8 @@ class CourseExamController extends Controller
 
             $page = session('exam_from_page', 1);
             return redirect()->route('course', ['page' => $page])
-                     ->with('success', 'ส่งข้อสอบเรียบร้อยแล้ว รอผลการตรวจ')
+                     ->with('success', 'ส่งข้อสอบเรียบร้อยแล้ว')
                      ->withFragment('course-' . $course_id);
         }
     }
-
 }

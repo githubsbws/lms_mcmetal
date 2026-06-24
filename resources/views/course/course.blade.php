@@ -263,6 +263,46 @@
                                             <div class="panel-body" style="padding: 20px;">
                                                 <div class="row">
                                                     <div class="col-12">
+                                                        {{-- pretest เขียนตรงนี้ --}}
+                                                        @if ($item->has_questions && $item->exam_type == 2)
+                                                            {{-- ===== PRETEST SECTION ===== --}}
+                                                            <div style="margin-bottom: 20px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+
+                                                                {{-- ส่วนหัว (Header) - สีน้ำเงิน ตัวอักษรขาว เหมือน Final Exam --}}
+                                                                <div style="background-color: #1F7BCC; color: white; padding: 18px 25px; display: flex; justify-content: space-between; align-items: center;">
+                                                                    <div>
+                                                                        <h3 style="font-size: 26px; font-weight: bold; margin: 0; color: white !important; line-height: 1;">
+                                                                            แบบทดสอบ Pre-Test
+                                                                        </h3>
+                                                                        @if($item->all_pretest_scores && $item->all_pretest_scores->isNotEmpty())
+                                                                            @php
+                                                                                $pretestScore = $item->all_pretest_scores->first();
+                                                                            @endphp
+                                                                            <p style="margin: 8px 0 0 0; font-size: 18px; color: rgba(255,255,255,0.9);">
+                                                                                คะแนน: {{ $pretestScore->score_number }}/{{ $pretestScore->score_total }}
+                                                                            </p>
+                                                                        @endif
+                                                                    </div>
+
+                                                                    {{-- ปุ่มเข้าสอบ --}}
+                                                                    <div>
+                                                                        @if($item->all_score_pretest)
+                                                                            <button class="btn btn-success"
+                                                                                style="font-size: 18px; font-weight: bold; border-radius: 8px; padding: 8px 30px; background-color: #28a745 !important; border: none; color: white !important; cursor: default;"
+                                                                                disabled>
+                                                                                สอบผ่านแล้ว
+                                                                            </button>
+                                                                        @else
+                                                                            <a href="{{ route('course.exam.pretest', [$item->course_id, 'from_page' => request()->query('page', 1), 'exam_type' => 'pre']) }}"
+                                                                               class="btn btn-info"
+                                                                               style="font-size: 18px; font-weight: bold; border-radius: 8px; padding: 8px 35px; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                                                                                เริ่มทำข้อสอบ
+                                                                            </a>
+                                                                        @endif
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        @endif
                                                         @foreach ($item->lesson as $index => $lessons)
                                                             {{-- แถบหัวข้อบทเรียน --}}
                                                             <div
@@ -423,6 +463,7 @@
                                                                                                             'page',
                                                                                                             1,
                                                                                                         ),
+                                                                                                        'exam_type' => 'post'
                                                                                                     ],
                                                                                                 )
                                                                                                 : route(

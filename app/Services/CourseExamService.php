@@ -17,8 +17,10 @@ class CourseExamService
 {
     const STATUS_ACTIVE = 'y';
     const PASS_THRESHOLD_PERCENT = 70;
+    const EXAM_TYPE_PRETEST = 'pre';
+    const EXAM_TYPE_POSTTEST = 'post';
 
-    public function getMultipleChoiceExam(int $courseId)
+    public function getMultipleChoiceExam(int $courseId, string $examType)
     {
         $userId = Auth::id();
         // 1. Eager Loading ดึงกลุ่มข้อสอบ คำถาม และช้อยส์ทั้งหมดรวดเดียว ดักสถานะ Active
@@ -40,24 +42,31 @@ class CourseExamService
                 ]);
             }
         ])->findOrFail($courseId);
-
         // 2. คำนวณเงื่อนไขความปลอดภัย (Guard Clauses)
         $totalLessons  = $course->lesson->count();
         $passedLessons = $course->lesson->filter(fn($l) => $l->learn->first()?->lesson_status === 'pass')->count();
 
         $userScores     = $course->courseScore;
-        $hasPassed      = $userScores->where('score_status', 'pass')->isNotEmpty();
+        $hasPostTest    = $userScores->where('exam_type',self::EXAM_TYPE_POSTTEST);
+        $hasPassed      = $hasPostTest->where('score_status', 'pass')->isNotEmpty();
         $attemptedCount = $userScores->count();
         $maxAttempts    = 1 + (int)($course->course_retest_amount ?? 0);
         $hasQuestions   = $course->groupTesting?->questions?->isNotEmpty() ?? false;
 
-        $examSession = $this->getOrCreateExamSession($userId, $courseId,2);
+        // หากเป็น Pre-test ให้ข้ามการตรวจเงื่อนไขความปลอดภัยอื่นๆ
+        if ($examType === self::EXAM_TYPE_PRETEST) {
+            if (!$hasQuestions) {
+                throw new \Exception('หลักสูตรนี้ยังไม่มีการจัดเตรียมข้อสอบปรนัย');
+            }
 
-        // 5. ฝากข้อมูลเข้าไปใน $course ตรงๆ เลย
-        $course->exam_session = $examSession;
-        $course->remaining_seconds = now()->diffInSeconds($examSession->expire_at, false);
+            $examSession = $this->getOrCreateExamSession($userId, $courseId, 2, self::EXAM_TYPE_PRETEST);
+            $course->exam_session = $examSession;
+            $course->remaining_seconds = now()->diffInSeconds($examSession->expire_at, false);
 
-        // 3. ตรวจสอบสิทธิ์แบบเด็ดขาด หากไม่ผ่านเงื่อนไขให้โยน Exception ออกไป
+            return $course;
+        }
+
+        // สำหรับ Post-test / standard exam ให้ใช้การตรวจสอบเดิม
         if (!$hasQuestions) {
             throw new \Exception('หลักสูตรนี้ยังไม่มีการจัดเตรียมข้อสอบปรนัย');
         }
@@ -70,6 +79,11 @@ class CourseExamService
         if ($attemptedCount >= $maxAttempts) {
             throw new \Exception('คุณใช้สิทธิ์สอบซ่อมครบกำหนดแล้ว กรุณาติดต่อแอดมิน');
         }
+
+        $examSession = $this->getOrCreateExamSession($userId, $courseId,2, self::EXAM_TYPE_POSTTEST);
+        // 5. ฝากข้อมูลเข้าไปใน $course ตรงๆ เลย
+        $course->exam_session = $examSession;
+        $course->remaining_seconds = now()->diffInSeconds($examSession->expire_at, false);
 
         return $course;
     }
@@ -179,6 +193,7 @@ class CourseExamService
         $userId = Auth::id();
         $answers = $request->input('answers'); // [ques_id => choice_id]
         $timeout = $request->input('is_timeout');
+        $examType = $request->input('exam_type');
         $examSessionId = $request->input('exam_session_id');
         //ดึงเวลาสอบมาดู
         $examSession = ExamTimeLog::where('id', $examSessionId)
@@ -187,10 +202,9 @@ class CourseExamService
 
         //นับคะแนนเต็ม
         $maxScoreCount = $this->getMaxScore($courseId);
-
         // 2. เช็คเงื่อนไข "ตกทันที" (ส่งมาว่า Timeout OR เวลาใน DB หมดแล้วจริง)
         $isActuallyTimeout = ($timeout == 1 || now()->gt($examSession->expire_at));
-        return DB::transaction(function () use ($userId, $courseId, $answers, $isActuallyTimeout, $examSession, $maxScoreCount) {
+        return DB::transaction(function () use ($userId, $courseId, $answers, $isActuallyTimeout, $examSession, $maxScoreCount, $examType) {
             if ($isActuallyTimeout) {
                 $currentScore = 0;
                 $maxScore = $maxScoreCount; // หรือจะนับจำนวนข้อสอบจริงส่งมาก็ได้
@@ -218,6 +232,7 @@ class CourseExamService
                 'course_id'    => $courseId,
                 'user_id'      => $userId,
                 'type'         => 2,
+                'exam_type'    => $examType,
                 'score_number' => $currentScore,
                 'score_total'  => $maxScore,
                 'score_status' => $status,
@@ -232,8 +247,8 @@ class CourseExamService
             ]);
 
             // 5. ถ้าสอบผ่าน ให้สร้างบันทึกใน PassCourse
-            if ($status === 'pass') {
-                Passcourse::create(
+            if($examType === self::EXAM_TYPE_POSTTEST && $status === 'pass'){
+                 Passcourse::create(
                     [
                         'passcours_cours' => $courseId,
                         'passcours_user'  => $userId,
@@ -247,7 +262,7 @@ class CourseExamService
         });
     }
 
-    private function getOrCreateExamSession(int $userId, int $courseId, int $type)
+    private function getOrCreateExamSession(int $userId, int $courseId, int $type, string $examType)
     {
         // 1. ดึงรอบการสอบล่าสุด (ID สูงสุด) ของ User ในวิชานี้
         $latestExam = ExamTimeLog::where('user_id', $userId)
@@ -275,6 +290,7 @@ class CourseExamService
                 'course_id'    => $courseId,
                 'user_id'      => $userId,
                 'type'         => $type,
+                'exam_type'    => $examType,
                 'score_number' => 0,
                 'score_total'  => $this->getMaxScore($courseId), // หรือใส่จำนวนข้อสอบจริง
                 'score_status' => 'fail',

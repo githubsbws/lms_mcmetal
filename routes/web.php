@@ -44,6 +44,8 @@ use App\Http\Controllers\ReportExcelController;
 //-------
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CourseExamController;
+use App\Http\Controllers\LibraryOnlineController;
+use App\Http\Controllers\Admin\LibraryOnlineController as AdminLibraryOnlineController;
 use App\Http\Controllers\LicensePersonController;
 use App\Http\Controllers\PotentialReportController;
 use App\Http\Controllers\RoadmapController;
@@ -142,6 +144,7 @@ Route::get('course/certificate/{course_id}',[CourseController::class, 'downloadC
 Route::get('course/certificate-confirm/{course_id}',[CourseController::class, 'downloadCertificateConfirm'])->name('certificate.confirm.download')->middleware('checkIdleTimeout');
 //เข้าหน้าสอบ
 Route::get('course/exam/multiple/{course_id}', [CourseExamController::class, 'multipleExam'])->name('course.exam.multiple')->middleware('checkIdleTimeout');
+Route::get('course/exam/pretest/{course_id}', [CourseExamController::class, 'multipleExam'])->name('course.exam.pretest')->middleware('checkIdleTimeout');
 Route::get('course/exam/essay/{course_id}', [CourseExamController::class, 'essayExam'])->name('course.exam.essay')->middleware('checkIdleTimeout');
 //บันทึกการสอบ
 Route::post('course/exam/multiple/submit/{course_id}', [CourseExamController::class, 'multipleExamSubmit'])->name('course.exam.submit-multiple')->middleware('checkIdleTimeout');
@@ -600,7 +603,7 @@ Route::post('/imgslide_update/{imgslide_id}',[AdminController::class,'imgslide_u
 Route::post('/imgslide_delete/{imgslide_id}',[AdminController::class,'imgslide_delete'])->name('imgslide_delete')->middleware('checkIdleTimeout');
 Route::get('/imgslide_edit/{imgslide_id}',[AdminController::class,'imgslide_edit'])->name('imgslide_edit')->middleware('checkIdleTimeout');
 //
-
+Route::get('/library/mangement',[AdminLibraryOnlineController::class,'index'])->name('admin.library.online')->middleware('checkIdleTimeout');
 Route::get('/librarytype',[AdminController::class,'librarytype'])->name('librarytype')->middleware('checkIdleTimeout');
 
 Route::get('/libraryfile',[AdminController::class,'libraryfile'])->name('libraryfile')->middleware('checkIdleTimeout');
@@ -858,6 +861,8 @@ Route::post('/licenseperson/operate/import',[LicensePersonController::class, 'op
 
 Route::get('/licenseperson/parameter',[LicensePersonController::class, 'indexParameter'])->name('license.parameter.index');
 Route::post('/licenseperson/parameter/import',[LicensePersonController::class, 'parameterImportExcel'])->name('license.parameter.excel');
+
+Route::get('/library-online',[LibraryOnlineController::class, 'index'])->name('library_online')->middleware('checkIdleTimeout');
 
 
 Route::middleware(['auth.admin'])->group(function(){
