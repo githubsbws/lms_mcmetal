@@ -34,6 +34,8 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Log as FacadesLog;
 use Illuminate\Support\Facades\Session;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
+use Mpdf\Mpdf;
+use App\Models\Certificate;
 
 class CourseController extends Controller
 {
@@ -223,4 +225,116 @@ class CourseController extends Controller
         }
     }
 
+    public function downloadCertificate($course_id)
+    {
+        $user = Auth::user();
+
+        // หา Certificate ที่ผูกกับ Course
+        $certificate = Certificate::where('cert_course', $course_id)
+            ->where('active', 'y')
+            ->firstOrFail();
+
+        $bg = public_path(
+            'images/uploads/certificate/' .
+            $certificate->id .
+            '/original/' .
+            $certificate->cert_pic
+        );
+        $fullname = trim(
+            ($user->profiles->firstname ?? '') . ' ' .
+            ($user->profiles->lastname ?? '')
+        );
+
+        $html = view(
+            'course.certificate_download',
+            compact(
+                'certificate',
+                'user',
+                'fullname'
+            )
+        )->render();
+
+        $mpdf = new Mpdf([
+            'mode' => 'utf-8',
+            'format' => 'A4-L',
+            'margin_left' => 0,
+            'margin_right' => 0,
+            'margin_top' => 0,
+            'margin_bottom' => 0,
+            'default_font' => 'garuda',
+        ]);
+
+        $mpdf->SetWatermarkImage(
+            $bg,
+            1,
+            [297, 210]
+        );
+
+        $mpdf->watermarkImgBehind = true;
+        $mpdf->showWatermarkImage = true;
+
+        $mpdf->WriteHTML($html);
+
+       $filename = trim(
+            preg_replace(
+                '/[\/\\\\\:\*\?\"\<\>\|\r\n\t]+/',
+                '',
+                $certificate->course->course_title ?? 'certificate'
+            )
+        );
+
+        $filename .= '_' . trim($fullname) . '.pdf';
+        return response(
+            $mpdf->Output($filename, 'S'),
+            200,
+            [
+                'Content-Type' => 'application/pdf',
+                'Content-Disposition' => 'attachment; filename="' . $filename . '"',
+            ]
+        );
+    }
+
+    public function downloadCertificateConfirm()
+    {
+        $user = Auth::user();
+
+        $fullname = trim(
+            ($user->profiles->firstname ?? '') . ' ' .
+            ($user->profiles->lastname ?? '')
+        );
+
+        $qrUrl = 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=' . urlencode($fullname);
+
+        $qrCode = $qrUrl;
+
+        $html = view(
+            'course.certificate_card',
+            compact(
+                'fullname',
+                'qrCode'
+            )
+        )->render();
+
+        $mpdf = new Mpdf([
+            'mode' => 'utf-8',
+            'format' => 'A4-L',
+            'margin_left' => 0,
+            'margin_right' => 0,
+            'margin_top' => 0,
+            'margin_bottom' => 0,
+            'default_font' => 'garuda',
+        ]);
+
+        $mpdf->WriteHTML($html);
+
+        return response(
+            $mpdf->Output('driver_card.pdf', 'S'),
+            200,
+            [
+                'Content-Type' => 'application/pdf',
+                'Content-Disposition' =>
+                    'attachment; filename="driver_card.pdf"',
+            ]
+        );
+    }
 }

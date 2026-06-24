@@ -48,6 +48,7 @@ use App\Http\Controllers\LicensePersonController;
 use App\Http\Controllers\PotentialReportController;
 use App\Http\Controllers\RoadmapController;
 use App\Http\Controllers\UploadController;
+use App\Http\Controllers\CertificateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -136,6 +137,9 @@ Route::get('index/my',[IndexController::class,'index'])->name('index');
 Route::post('/lms_brother_docker/lms/app/index/user/recovery',[ForgotController::class,'forgotRecovery'])->name('forgot.recovery');
 // ----- course
 Route::get('course',[CourseController::class,'course'])->name('course')->middleware('checkIdleTimeout');
+//ใบประกาศนียบัตร
+Route::get('course/certificate/{course_id}',[CourseController::class, 'downloadCertificate'])->name('certificate.download')->middleware('checkIdleTimeout');
+Route::get('course/certificate-confirm/{course_id}',[CourseController::class, 'downloadCertificateConfirm'])->name('certificate.confirm.download')->middleware('checkIdleTimeout');
 //เข้าหน้าสอบ
 Route::get('course/exam/multiple/{course_id}', [CourseExamController::class, 'multipleExam'])->name('course.exam.multiple')->middleware('checkIdleTimeout');
 Route::get('course/exam/essay/{course_id}', [CourseExamController::class, 'essayExam'])->name('course.exam.essay')->middleware('checkIdleTimeout');
@@ -862,4 +866,28 @@ Route::middleware(['auth.admin'])->group(function(){
     Route::post('/roadmap/new-emp/course/order',[RoadmapController::class, 'updateOrder'])->name('admin.roadmap.updateOrder');
 });
 
+Route::middleware(['auth'])->group(function () {
+
+    Route::get('/certificate', [CertificateController::class, 'index'])
+        ->name('certificate.index');
+
+});
+//---------- certificate ----------//
+Route::get('/certificate',[CertificateController::class,'certificate'])->name('certificate')->middleware('checkIdleTimeout');
+Route::get('certificate_search',[CertificateController::class,'certificate'])->name('certificate.search')->middleware('checkIdleTimeout');
+Route::match(['get', 'post'],
+    '/certificate/edit/{id}',
+    [CertificateController::class, 'certificate_edit']
+)->name('certificate.edit');
+// Route::get('certificate_edit/{id}',[CertificateController::class,'certificate_edit'])->name('certificate.edit')->middleware('checkIdleTimeout');
+// Route::post('certificate_edit/{id}',[CertificateController::class,'certificate_edit'])->name('certificate.edit')->middleware('checkIdleTimeout');
+
+Route::get('certificate_create',[CertificateController::class,'certificate_create'])->name('certificate.create')->middleware('checkIdleTimeout');
+Route::post('certificate_create',[CertificateController::class,'certificate_create'])->name('certificate.create')->middleware('checkIdleTimeout');
+
+Route::get('certificate_detail/{id}',[CertificateController::class,'certificate_detail'])->name('certificate.detail')->middleware('checkIdleTimeout');
+
+Route::post('certificate_delete/{id}',[CertificateController::class,'certificate_delete'])->name('certificate.delete')->middleware('checkIdleTimeout');
+
+Route::get('/certificate/certificate_detail/{id}', [CertificateController::class, 'certificate_detail'])->name('certificate.pdf');
 });

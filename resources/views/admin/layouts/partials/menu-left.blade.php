@@ -353,12 +353,32 @@ use App\Helpers\PermissionHelper;
                     </ul>
                 </li>
                 @endcanmenu
-                {{-- <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-print"></i>
-                        <p>จัดการใบประกาศนียบัตร</p>
+                @canmenu(15)
+                <li class="nav-item {{ request()->is('certificate*') ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ request()->is('certificate*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-eye"></i>
+                        <p>
+                            ระบบจัดการใบประกาศนียบัตร
+                            <i class="right fas fa-angle-left"></i>
+                            <span class="badge badge-info right">7</span>
+                        </p>
                     </a>
-                </li> --}}
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ url('/certificate_create') }}" class="nav-link {{ request()->is('certificate_create') ? 'active' : '' }}">
+                                <p>เพิ่มใบประกาศนียบัตร</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ url('/certificate') }}" class="nav-link {{ request()->is('certificate') ? 'active' : '' }}">
+                                <p>จัดการใบประกาศนียบัตร</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                @endcanmenu
                 @canmenu(25)
                     <li class="nav-item {{ request()->is('licenseperson*') ? 'menu-open' : '' }}">
                     <a href="#" class="nav-link {{ request()->is('licenseperson*') ? 'active' : '' }}">

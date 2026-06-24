@@ -194,7 +194,24 @@
                                                     {{-- progressbar --}}
 
                                                     <hr style="margin: 15px 0;">
+                                                    <div class="text-center mt-4"
+    style="border-radius:15px;padding:25px;">
 
+    <div class="mt-3">
+        <a href="{{ route('certificate.download', $item->course_id) }}"
+            class="btn btn-info btn-lg mr-2">
+            <i class="fa fa-download"></i>
+            ดาวน์โหลดใบประกาศ
+        </a>
+
+        <a href="{{ route('certificate.confirm.download', $item->course_id) }}"
+            class="btn btn-info btn-lg">
+            <i class="fa fa-download"></i>
+            ดาวน์โหลดหนังสือรับรอง
+        </a>
+    </div>
+
+</div>
                                                     {{-- รายละเอียดวิทยากรและวันที่ --}}
                                                     <div class="course-meta" style="font-size: 20px; color: #666;">
                                                         <p><i class="fa fa-user fa-fw"></i> <strong>ผู้สอน :</strong>
