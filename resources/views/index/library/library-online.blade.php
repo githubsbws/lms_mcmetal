@@ -171,28 +171,31 @@
         </div>
 
         <div class="library-files-grid">
-
-            @foreach ($libraryFiles as $file)
-            <a href="{{ route('library_online.view', $file->id) }}" target="_blank" class="text-decoration-none text-dark">
-                <div class="library-file-card">
-                    @php
-                        // ดึงนามสกุลไฟล์ออกมา และแปลงเป็นตัวพิมพ์เล็กทั้งหมดเพื่อความปลอดภัย
-                        $extension = strtolower(pathinfo($file->filename, PATHINFO_EXTENSION));
-                    @endphp
-                    <div class="file-icon {{ $extension }}">
-                        @if ($extension === 'pdf')
-                            <i class="fas fa-file-pdf"></i>
-                        @else
-                            <i class="fas fa-file-video"></i>
-                        @endif
+            @if($libraryFiles->isNotEmpty())
+                @foreach ($libraryFiles as $file)
+                <a href="{{ route('library_online.view', $file->id) }}" target="_blank" class="text-decoration-none text-dark">
+                    <div class="library-file-card">
+                        @php
+                            // ดึงนามสกุลไฟล์ออกมา และแปลงเป็นตัวพิมพ์เล็กทั้งหมดเพื่อความปลอดภัย
+                            $extension = strtolower(pathinfo($file->filename, PATHINFO_EXTENSION));
+                        @endphp
+                        <div class="file-icon {{ $extension }}">
+                            @if ($extension === 'pdf')
+                                <i class="fas fa-file-pdf"></i>
+                            @else
+                                <i class="fas fa-file-video"></i>
+                            @endif
+                        </div>
+                        <div class="file-name" style="font-size: 2rem">{{ $file->name }}</div>
+                        <div class="file-meta">
+                            <span><i class="fas fa-clock"></i>{{ \Carbon\Carbon::parse($file->created_at)->locale('th')->isoFormat('D MMM YYYY') }}</span>
+                        </div>
                     </div>
-                    <div class="file-name" style="font-size: 2rem">{{ $file->name }}</div>
-                    <div class="file-meta">
-                        <span><i class="fas fa-clock"></i>{{ \Carbon\Carbon::parse($file->created_at)->locale('th')->isoFormat('D MMM YYYY') }}</span>
-                    </div>
-                </div>
-            </a>
-            @endforeach
+                </a>
+                @endforeach
+            @else
+                <div class="text-center mt-2" style="font-size: 2rem"><p>ไม่มีไฟล์</p></div>
+            @endif
         </div>
     </div>
 </div>

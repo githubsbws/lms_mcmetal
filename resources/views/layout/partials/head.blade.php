@@ -174,7 +174,7 @@ use App\Models\Usability;
                 </button>
                 <div class="navbar-brand navbar-brand-logo">
                     <a href="{{url('index')}}">
-                        <img src="{{ asset('themes/bws/images/toyologo.jpg') }}" class="logonav" style="width: 74px !important; height: auto !important;">
+                        <img src="{{ asset('themes/bws/images/logo.jpg') }}" class="logonav" style="width: 74px !important; height: auto !important;">
                     </a>
                 </div>
             </div>
