@@ -3,6 +3,9 @@
 @section('content')
 
 <style>
+    .main-content {
+        min-height: 100vh;
+    }
     .library-folder-ui {
         max-width: 1200px;
         margin: 0 auto;
@@ -158,43 +161,37 @@
                 <strong>Library Online</strong>
                 <span>&gt;</span>
                 <span>Documents</span>
-                <span>&gt;</span>
-                <span>My Files</span>
+                {{-- <span>&gt;</span> --}}
+                {{-- <span>My Files</span> --}}
             </div>
-            <div class="path-search">
+            {{-- <div class="path-search">
                 <input type="text" placeholder="ค้นหาไฟล..." aria-label="Search files">
                 <button type="button" class="btn btn-default" style="border: 1px solid #c7c7c7; border-radius: 999px; padding: 8px 14px; background: #fff;">ค้นหา</button>
-            </div>
+            </div> --}}
         </div>
 
         <div class="library-files-grid">
-            @php
-                $mockFiles = [
-                    ['type' => 'pdf', 'title' => 'สรุปการเรียนร้.pdf', 'subtitle' => 'PDF Document', 'size' => '1.3 MB'],
-                    ['type' => 'pdf', 'title' => 'ค่มือใช้งาน.pdf', 'subtitle' => 'PDF Document', 'size' => '2.1 MB'],
-                    ['type' => 'video', 'title' => 'วิดีอสอนพื้นาน.mp4', 'subtitle' => 'Video File', 'size' => '54 MB'],
-                    ['type' => 'video', 'title' => 'คลิปสรุปบทเรียน.mp4', 'subtitle' => 'Video File', 'size' => '79 MB'],
-                    ['type' => 'pdf', 'title' => 'เอกสารประกอบการสอน.pdf', 'subtitle' => 'PDF Document', 'size' => '880 KB'],
-                    ['type' => 'video', 'title' => 'ตัวอย่างการใช้งาน.mp4', 'subtitle' => 'Video File', 'size' => '120 MB'],
-                ];
-            @endphp
 
-            @foreach ($mockFiles as $file)
+            @foreach ($libraryFiles as $file)
+            <a href="{{ route('library_online.view', $file->id) }}" target="_blank" class="text-decoration-none text-dark">
                 <div class="library-file-card">
-                    <div class="file-icon {{ $file['type'] }}">
-                        @if ($file['type'] === 'pdf')
+                    @php
+                        // ดึงนามสกุลไฟล์ออกมา และแปลงเป็นตัวพิมพ์เล็กทั้งหมดเพื่อความปลอดภัย
+                        $extension = strtolower(pathinfo($file->filename, PATHINFO_EXTENSION));
+                    @endphp
+                    <div class="file-icon {{ $extension }}">
+                        @if ($extension === 'pdf')
                             <i class="fas fa-file-pdf"></i>
                         @else
                             <i class="fas fa-file-video"></i>
                         @endif
                     </div>
-                    <div class="file-name">{{ $file['title'] }}</div>
-                    <div class="file-title">{{ $file['subtitle'] }}</div>
+                    <div class="file-name" style="font-size: 2rem">{{ $file->name }}</div>
                     <div class="file-meta">
-                        <span><i class="fas fa-clock"></i> 12 มิ.ย. 2569</span>
-                        <span><i class="fas fa-database"></i> {{ $file['size'] }}</span>
+                        <span><i class="fas fa-clock"></i>{{ \Carbon\Carbon::parse($file->created_at)->locale('th')->isoFormat('D MMM YYYY') }}</span>
                     </div>
                 </div>
+            </a>
             @endforeach
         </div>
     </div>
