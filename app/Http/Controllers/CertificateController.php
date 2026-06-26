@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\File as FileStore;
 use App\Models\Course;
 use App\Models\Certificate;
+use App\Models\Logadmin;
 use Mpdf\Mpdf;
 
 class CertificateController extends Controller
@@ -53,6 +54,12 @@ class CertificateController extends Controller
                 $cert_create->created_by = auth()->user()->id;
                 $cert_create->active = 'y';
                 $cert_create->save();
+
+                $log_admin = new Logadmin();
+                $log_admin->action = 'สร้างใบรับรอง';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
 
                 // 📂 **จัดการการสร้างโฟลเดอร์**
                 $certFolder = public_path("images/uploads/certificate/".$cert_create->id);

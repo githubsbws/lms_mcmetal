@@ -691,7 +691,7 @@ use App\Helpers\PermissionHelper;
                     </ul>
                 </li>
                 @endcanmenu
-                {{-- @canmenu(24)
+                @canmenu(24)
                 <li class="nav-item {{ request()->is('log*') ? 'menu-open' : '' }}">
                     <a href="#" class="nav-link {{ request()->is('log*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-print"></i>
@@ -701,11 +701,11 @@ use App\Helpers\PermissionHelper;
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="{{url('/logusers')}}" class="nav-link {{ request()->is('logusers') ? 'active' : '' }}">
                                 <p>Log การใช้งานผู้เรียน</p>
                             </a>
-                        </li>
+                        </li> --}}
                         <li class="nav-item">
                             <a href="{{url('/logadmin')}}" class="nav-link {{ request()->is('logadmin') ? 'active' : '' }}">
                                 <p>Log การใช้งานผู้ดูแลระบบ</p>
@@ -713,7 +713,7 @@ use App\Helpers\PermissionHelper;
                         </li>
                     </ul>
                 </li>
-                @endcanmenu --}}
+                @endcanmenu
                 @canmenu(27)
                     <li class="nav-item {{ request()->is('library*') ? 'menu-open' : '' }}">
                     <a href="{{ route('admin.library.online') }}" class="nav-link {{ request()->is('library*') ? 'active' : '' }}">

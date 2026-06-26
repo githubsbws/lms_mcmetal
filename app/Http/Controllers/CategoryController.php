@@ -8,6 +8,7 @@ use App\Models\Course;
 use App\Models\Lesson;
 use App\Models\Category;
 use App\Models\Filecategory;
+use App\Models\Logadmin;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
@@ -49,6 +50,13 @@ class CategoryController extends Controller
             'filename' => $filename_vdo,
         ]);
         $redirectUrl = route('category');
+
+                $log_admin = new Logadmin();
+                $log_admin->action = 'สร้างหมวดหลักสูตร';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
+
         return redirect($redirectUrl);
     }
 
@@ -108,6 +116,11 @@ class CategoryController extends Controller
             'update_date' => now(),
         ]);
         $redirectUrl = route('category');
+                $log_admin = new Logadmin();
+                $log_admin->action = 'แก้ไขหมวดหลักสูตร';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
         return redirect($redirectUrl);
     }
 
