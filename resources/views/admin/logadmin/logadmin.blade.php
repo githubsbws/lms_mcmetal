@@ -28,10 +28,10 @@
 							<table id="settingTable" class="table table-striped table-bordered nowrap" style="width:100%">
 								<thead>
 									<tr>
-										<th>Controller</th>
+										{{-- <th>Controller</th> --}}
 										<th>action</th>
 										<th>user</th>
-										<th>ASC</th>
+										{{-- <th>ASC</th> --}}
 										<th>วันที่</th>
 									</tr>
 								</thead>
@@ -49,24 +49,20 @@
 	</div>
 	<div class="clearfix"></div>
 <script>
-	$(document).ready(function() {
-		$('#settingTable').DataTable({
-			serverSide: true,
-			processing: true,
-			ajax: "{{ route('admin.admin_data') }}",
-			columns: [
-				{ data: 'controller', name: 'controller', orderable: false },
-				{ data: 'action', name: 'action', orderable: false },
-				{ data: 'username', name: 'username', orderable: false },
-				{ data: 'name', name: 'name', orderable: false },
-				{ data: 'create_date', name: 'create_date' }
-			],
-			language: {
-				url: '/include/languageDataTable.json'
-			},
-			pageLength: 10
-		});
-	});
+	$('#settingTable').DataTable({
+    processing: true,
+    serverSide: true,
+    ajax: "{{ route('admin.admin_data') }}",
+    columns: [
+        { data: 'action', name: 'action', orderable: false },
+        { data: 'name', name: 'name', orderable: false },
+        { data: 'create_date', name: 'create_date' }
+    ],
+    language: {
+        url: '/include/languageDataTable.json'
+    },
+    pageLength: 10
+});
 </script>	
 </body>
 @endsection

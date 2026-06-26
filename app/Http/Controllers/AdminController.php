@@ -152,6 +152,12 @@ class AdminController extends Controller
                 $userAdmin = AuthFacade::useradmin();
                 // dd($userAdmin->toArray());
 
+                $log_admin = new Logadmin();
+                $log_admin->action = 'เข้าสู่ระบบผู้ดูแลระบบ';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
+
                 if($userAdmin){
                     return redirect()->intended('admin');
                 }else{
@@ -166,6 +172,12 @@ class AdminController extends Controller
     }
     public function logoutadmin()
     {
+                $log_admin = new Logadmin();
+                $log_admin->action = 'ออกจากระบบผู้ดูแลระบบ';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
+
         Auth::logout();
 
         // Redirect to the home page or any other desired page
@@ -174,6 +186,11 @@ class AdminController extends Controller
     function aboutus(){
         if(AuthFacade::useradmin()){
             $about = About::where('active','y')->get();
+                $log_admin = new Logadmin();
+                $log_admin->action = 'ข้อมูลเกี่ยวกับเรา';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
             return view("admin.aboutus.aboutus",['about'=>$about]);
         }else{
             return redirect()->route('login.admin');
@@ -188,7 +205,6 @@ class AdminController extends Controller
                 ]);
 
                 if ($validator->fails()) {
-
                     return redirect()->back()->withErrors($validator)->withInput(); // ส่งกลับไปยังหน้าก่อนหน้าพร้อมกับข้อมูลที่ผู้ใช้ป้อนเพื่อแสดงข้อผิดพลาด
                 }
 
@@ -202,6 +218,12 @@ class AdminController extends Controller
 
                 $about_new->save();
 
+                $log_admin = new Logadmin();
+                $log_admin->action = 'สร้างข้อมูลเกี่ยวกับเรา';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
+
                 return redirect()->route('aboutus')->with('success', 'อัปเดตข้อมูลเรียบร้อยแล้ว');
 
             }
@@ -212,6 +234,11 @@ class AdminController extends Controller
     }
     function aboutus_detail($id){
         if(AuthFacade::useradmin()){
+                $log_admin = new Logadmin();
+                $log_admin->action = 'ดูข้อมูลเกี่ยวกับเรา';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
             $about_detail = About::where('about_id',$id)->first();
             return view("admin.aboutus.aboutus_detail",['about_detail'=>$about_detail]);
         }else{
@@ -239,7 +266,13 @@ class AdminController extends Controller
                 // เพิ่มข้อมูลอื่น ๆ ที่ต้องการอัปเดต
 
                 $about_update->save();
-
+                
+                $log_admin = new Logadmin();
+                $log_admin->action = 'แก้ไขข้อมูลเกี่ยวกับเรา';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
+                
                 return redirect()->route('aboutus')->with('success', 'อัปเดตข้อมูลเรียบร้อยแล้ว');
             }
 
@@ -255,6 +288,12 @@ class AdminController extends Controller
             ];
             $aboutus = About::findById($id);
             $aboutus->update($aboutus_del);
+
+            $log_admin = new Logadmin();
+            $log_admin->action = 'ลบข้อมูลเกี่ยวกับเรา';
+            $log_admin->user_id = auth()->user()->id;
+            $log_admin->create_date = now();
+            $log_admin->save();
 
             // dd($aboutus->toArray());
             return redirect()->route('aboutus');
@@ -526,6 +565,11 @@ class AdminController extends Controller
     function video(){
         if(AuthFacade::useradmin()){
             $vdo =Video::where('active','y')->OrderBy('vdo_id','desc')->get();
+                $log_admin = new Logadmin();
+                $log_admin->action = 'ข้อมูลวิดีโอ';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
             return view("admin.video.video",compact('vdo'));
         }else{
             return redirect()->route('login.admin');
@@ -534,6 +578,12 @@ class AdminController extends Controller
     function video_detail($vdo_id){
         if(AuthFacade::useradmin()){
             $vdo = Video::where('vdo_id',$vdo_id)->first();
+
+                $log_admin = new Logadmin();
+                $log_admin->action = 'รายละเอียดวิดีโอ';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
 
             return view("admin.video.video_detail",['vdo'=> $vdo]);
         }else{
@@ -557,6 +607,11 @@ class AdminController extends Controller
                 'active'=>'y'                   //default
             ];
             DB::table('vdo')->insert($vdo_data);
+                $log_admin = new Logadmin();
+                $log_admin->action = 'เพิ่มวิดีโอ';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
             return redirect()->route('video')->with('success', 'อัปเดตข้อมูลเรียบร้อยแล้ว');
         }else{
             return redirect()->route('login.admin');
@@ -587,6 +642,11 @@ class AdminController extends Controller
                 'active'=>'y'                   //default
             ];
             DB::table('vdo')->where('vdo_id',$vdo_id)->update($vdo_data);
+                $log_admin = new Logadmin();
+                $log_admin->action = 'แก้ไขวิดีโอ';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
             return redirect()->route('video')->with('success', 'อัปเดตข้อมูลเรียบร้อยแล้ว');
         }else{
             return redirect()->route('login.admin');
@@ -598,6 +658,11 @@ class AdminController extends Controller
                 'active'=>'n'
             ];
             DB::table('vdo')->where('vdo_id',$vdo_id)->update($vdo_delete);
+                $log_admin = new Logadmin();
+                $log_admin->action = 'ลบวิดีโอ';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
             return redirect()->route('video')->with('success', 'อัปเดตข้อมูลเรียบร้อยแล้ว');
         }else{
             return redirect()->route('login.admin');
@@ -615,6 +680,12 @@ class AdminController extends Controller
 
             // ดึงข้อมูลหัวข้อเอกสาร (Downloadtitle)
             $document_title = Downloadtitle::where('active', 'y')->get();
+
+                $log_admin = new Logadmin();
+                $log_admin->action = 'ดูข้อมูลเอกสาร';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
 
             // ส่งข้อมูลไปยัง view
             return view("admin.document.document", [
@@ -665,6 +736,12 @@ class AdminController extends Controller
                         $doc->move($idFolder, $docname);
                     }
                     $document->save();
+
+                $log_admin = new Logadmin();
+                $log_admin->action = 'เพิ่มข้อมูลเอกสาร';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
                 }
                 // dd($document->toArray());
                 $document->save();
@@ -726,6 +803,12 @@ class AdminController extends Controller
                         $doc->move($idFolder, $docname);
                     }
                     $document->save();
+
+                $log_admin = new Logadmin();
+                $log_admin->action = 'แก้ไขข้อมูลเอกสาร';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
                 }
                 // dd($document->toArray());
                 $document->save();
@@ -741,6 +824,12 @@ class AdminController extends Controller
             $document = DownloadFileDoc::where('filedoc_id',$id)->first();
 
             $type = DownloadFile::join('download_categoty','download_categoty.download_id','=','download_file.download_id')->where('file_id',$document->file_id)->first();
+
+                $log_admin = new Logadmin();
+                $log_admin->action = 'ดูข้อมูลรายละเอียดเอกสาร';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
 
             return view("admin.document.document_detail",['document' =>$document,'type' => $type]);
         }else{
@@ -771,6 +860,13 @@ class AdminController extends Controller
             ];
             $document = DownloadFileDoc::findById($id);
             $document->update($document_del);
+
+                $log_admin = new Logadmin();
+                $log_admin->action = 'ลบข้อมูลเอกสาร';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
+
             return redirect()->route('document');
         }else{
             return redirect()->route('login.admin');
@@ -920,6 +1016,13 @@ class AdminController extends Controller
                 // เพิ่มข้อมูลอื่น ๆ ที่ต้องการอัปเดต
 
                 $news_create->save();
+
+                $log_admin = new Logadmin();
+                $log_admin->action = 'เพิ่มข้อมูลข่าวสาร';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
+                
                 // dd($news_create->toArray());
                 if($request->file('image')){
                     $image = $request->file('image');
@@ -992,6 +1095,12 @@ class AdminController extends Controller
 
                 $news_update->save();
 
+                $log_admin = new Logadmin();
+                $log_admin->action = 'แก้ไขข้อมูลข่าวสาร';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
+
                 return redirect()->route('news')->with('success', 'อัปเดตข้อมูลเรียบร้อยแล้ว');
             }
             return view("admin.news.News-edit",['news' => $news]);
@@ -1002,6 +1111,11 @@ class AdminController extends Controller
     function news(){
         if(AuthFacade::useradmin()){
             $news = News::where('active','y')->get();
+                $log_admin = new Logadmin();
+                $log_admin->action = 'ดูข้อมูลข่าวสาร';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
             return view("admin.news.news",['news' => $news]);
         }else{
             return redirect()->route('login.admin');
@@ -1010,6 +1124,11 @@ class AdminController extends Controller
     function news_detail($id){
         if(AuthFacade::useradmin()){
             $news = News::where('cms_id',$id)->first();
+                $log_admin = new Logadmin();
+                $log_admin->action = 'ดูรายละเอียดข่าวสาร';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
             return view("admin.news.news_detail",['news' => $news]);
         }else{
             return redirect()->route('login.admin');
@@ -1022,7 +1141,11 @@ class AdminController extends Controller
             ];
             $news = News::findById($id);
             $news->update($news_del);
-
+                $log_admin = new Logadmin();
+                $log_admin->action = 'ลบข้อมูลข่าวสาร';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
             // dd($news->toArray());
             return redirect()->route('news');
         }else{
@@ -1037,7 +1160,11 @@ class AdminController extends Controller
             })
             ->orderBy('cate_id', 'desc')
             ->get();
-
+                $log_admin = new Logadmin();
+                $log_admin->action = 'ดูข้อมูลหมวดหลักสูตร';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
             return view("admin.category.category",compact('category_on'));
         }else{
             return redirect()->route('login.admin');
@@ -1050,6 +1177,11 @@ class AdminController extends Controller
             ];
             $category = Category::findById($id);
             $category->update($category_del);
+                $log_admin = new Logadmin();
+                $log_admin->action = 'ลบข้อมูลหมวดหลักสูตร';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
             return redirect()->route('category');
         }else{
             return redirect()->route('login.admin');
@@ -1082,6 +1214,11 @@ class AdminController extends Controller
                 $category_create->active = 'y';
                 $category_create->save();
                 // เพิ่มข้อมูลอื่น ๆ ที่ต้องการอัปเดต
+                $log_admin = new Logadmin();
+                $log_admin->action = 'เพิ่มข้อมูลหมวดหลักสูตร';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
 
                 if ($request->hasFile('image')) {
                     $image = $request->file('image');
@@ -1109,6 +1246,12 @@ class AdminController extends Controller
     function category_detail($id){
         if(AuthFacade::useradmin()){
             $category = Category::where('cate_id',$id)->first();
+
+                $log_admin = new Logadmin();
+                $log_admin->action = 'ดูรายละเอียดหมวดหลักสูตร';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
 
             return view("admin.category.category_detail",compact('category'));
         }else{
@@ -1158,6 +1301,12 @@ class AdminController extends Controller
 
                 $category_update->save();
 
+                $log_admin = new Logadmin();
+                $log_admin->action = 'แก้ไขข้อมูลหมวดหลักสูตร';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
+
                 return redirect()->route('category')->with('success', 'อัปเดตข้อมูลเรียบร้อยแล้ว');
             }
 
@@ -1199,6 +1348,12 @@ class AdminController extends Controller
                 })
                 ->orderBy('sortOrder', 'desc')
                 ->get();
+
+                $log_admin = new Logadmin();
+                $log_admin->action = 'ดูข้อมูลหลักสูตร';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
             return view("admin.courseonline.courseonline", compact('course_online'));
         }else{
             return redirect()->route('login.admin');
@@ -1212,6 +1367,11 @@ class AdminController extends Controller
             ];
             $courseonline = Course::findById($id);
             $courseonline->update($courseonline_del);
+                $log_admin = new Logadmin();
+                $log_admin->action = 'ลบข้อมูลหลักสูตร';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
             return redirect()->route('courseonline');
         }else{
             return redirect()->route('login.admin');
@@ -1220,6 +1380,11 @@ class AdminController extends Controller
     function courseonline_detail($id){
         if(AuthFacade::useradmin()){
             $course_online = Course::join('category', 'category.cate_id', '=', 'course_online.cate_id')->where('course_online.course_id',$id)->first();
+                $log_admin = new Logadmin();
+                $log_admin->action = 'ดูรายละเอียดหลักสูตร';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
             return view("admin.courseonline.courseonline_detail", compact('course_online'));
         }else{
             return redirect()->route('login.admin');
@@ -1341,6 +1506,12 @@ class AdminController extends Controller
                 // เพิ่มข้อมูลอื่น ๆ ที่ต้องการอัปเดต
 
                 $course_update->save();
+
+                $log_admin = new Logadmin();
+                $log_admin->action = 'แก้ไขข้อมูลหลักสูตร';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
 
                 if($request->boolean('onboarding') && $request->has('milestone')){
                     $oldRoadmapCourse = DB::table('roadmap_course')
@@ -1602,6 +1773,12 @@ class AdminController extends Controller
 
                 $scoreWeight->save();
 
+                $log_admin = new Logadmin();
+                $log_admin->action = 'สร้างข้อมูลหลักสูตร';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
+
                 return redirect()->route('courseonline')->with('success', 'อัปเดตข้อมูลเรียบร้อยแล้ว');
             }
             return view("admin.courseonline.courseonline_create", compact('category','teacher','orgtree','licenseOperation','licenseParameter'));
@@ -1662,6 +1839,12 @@ class AdminController extends Controller
                 $teacher->active = 'y';
                 $teacher->department_org_id = auth()->user()->department_org_id;
                 $teacher->save();
+
+                $log_admin = new Logadmin();
+                $log_admin->action = 'สร้างข้อมูลผู้สอน';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
                 // if($request->file('image')){
                 //     $image = $request->file('image');
                 //     $imageName = $image->getClientOriginalName();
@@ -1734,6 +1917,12 @@ class AdminController extends Controller
                 // }
                 $teacher->save();
 
+                $log_admin = new Logadmin();
+                $log_admin->action = 'แก้ไขข้อมูลผู้สอน';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
+
                 return redirect()->route('teacher.create')->with('success', 'อัปเดตข้อมูลเรียบร้อยแล้ว');
             }
             return view("admin.courseonline.teacher_edit", compact('teacher'));
@@ -1749,6 +1938,13 @@ class AdminController extends Controller
             ];
             $teacher = Teacher::findById($id);
             $teacher->update($teacher_del);
+
+                $log_admin = new Logadmin();
+                $log_admin->action = 'ลบข้อมูลผู้สอน';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
+
             return redirect()->route('teacher.create');
         }else{
             return redirect()->route('login.admin');
@@ -1871,6 +2067,13 @@ class AdminController extends Controller
             })
             ->orderBy('id','DESC')
             ->get();
+
+                $log_admin = new Logadmin();
+                $log_admin->action = 'ดูข้อมูลบทเรียน';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
+
             return view("admin.lesson.lesson",compact('lesson'));
         }else{
             return redirect()->route('login.admin');
@@ -1882,6 +2085,12 @@ class AdminController extends Controller
             $lesson = Lesson::join('course_online','course_online.course_id','=','lesson.course_id')->where('lesson.id',$id)->first();
             $file = File::where('lesson_id',$id)->where('active','y')->first();
             $filedoc = FileDoc::where('lesson_id',$id)->where('active','y')->first();
+
+                $log_admin = new Logadmin();
+                $log_admin->action = 'ดูรายละเอียดบทเรียน';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
 
             return view("admin.lesson.lesson_detail",compact('lesson','file','filedoc'));
         }else{
@@ -1912,6 +2121,13 @@ class AdminController extends Controller
             ];
             $lesson = Lesson::findById($id);
             $lesson->update($lesson_del);
+
+                $log_admin = new Logadmin();
+                $log_admin->action = 'ลบข้อมูลบทเรียน';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
+
             return redirect()->route('lesson');
         }else{
             return redirect()->route('login.admin');
@@ -1925,6 +2141,11 @@ class AdminController extends Controller
             ];
             $file = File::findById($id);
             $file->update($file_del);
+            $log_admin = new Logadmin();
+            $log_admin->action = 'ลบข้อมูลวิดีโอบทเรียน';
+            $log_admin->user_id = auth()->user()->id;
+            $log_admin->create_date = now();
+            $log_admin->save();
             return redirect()->route('lesson');
         }else{
             return redirect()->route('login.admin');
@@ -2093,6 +2314,12 @@ class AdminController extends Controller
                 }
                 // เพิ่มข้อมูลอื่น ๆ ที่ต้องการอัปเดต
 
+                $log_admin = new Logadmin();
+                $log_admin->action = 'แก้ไขข้อมูลบทเรียน';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
+
                 $lesson_update->save();
 
                 return redirect()->route('lesson')->with('success', 'อัปเดตข้อมูลเรียบร้อยแล้ว');
@@ -2251,6 +2478,12 @@ class AdminController extends Controller
                 // 🔥 **ตั้งค่าการเรียงลำดับ**s
                 $lesson_create->sort_lesson = $lesson_create->id;
                 $lesson_create->save();
+
+                $log_admin = new Logadmin();
+                $log_admin->action = 'สร้างข้อมูลบทเรียน';
+                $log_admin->user_id = auth()->user()->id;
+                $log_admin->create_date = now();
+                $log_admin->save();
 
                 DB::commit();
             }catch (\Exception $e){
@@ -5081,17 +5314,31 @@ class AdminController extends Controller
     }
     public function getadminData(Request $request)
     {
-        $query = Logadmin::join('tbl_users as u', 'log_admin.user_id', '=', 'u.id')
-                ->leftJoin('tbl_asc as a', 'u.asc_id', '=', 'a.id')
-                ->select('log_admin.controller', 'log_admin.action', 'u.username','a.name', 'log_admin.create_date');
+    $query = Logadmin::query()
+        ->join('tbl_users as u', 'log_admin.user_id', '=', 'u.id')
+        ->leftJoin('tbl_profiles as p', 'u.id', '=', 'p.user_id')
+        ->select([
+            'log_admin.action',
+            'log_admin.create_date',
+            DB::raw("
+                COALESCE(
+                    TRIM(COALESCE(p.firstname,'') || ' ' || COALESCE(p.lastname,'')),
+                    '-'
+                ) as name
+            "),
+        ])
+        ->orderByDesc('log_admin.create_date');
 
-        return DataTables::of($query)
-            ->addColumn('controller', fn($row) => $row->controller ?? '-')
-            ->addColumn('action', fn($row) => $row->action ?? '-')
-            ->addColumn('username', fn($row) => $row->username ?? '-')
-            ->addColumn('name', fn($row) => $row->name ?? '-')
-            ->addColumn('create_date', fn($row) => $row->create_date ?? '-')
-            ->make(true);
+    return DataTables::of($query)
+        ->editColumn('action', function ($row) {
+            return $row->action ?: '-';
+        })
+        ->editColumn('create_date', function ($row) {
+            return \Carbon\Carbon::parse($row->create_date)
+                ->locale('th')
+                ->translatedFormat('d F Y เวลา H:i น.');
+        })
+        ->make(true);
     }
 
     function logusers(){

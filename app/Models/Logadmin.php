@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Profiles;
+use App\Models\Users;
 
 class Logadmin extends Model
 {
@@ -27,5 +29,15 @@ class Logadmin extends Model
     public static function findById($id)
     {
         return static::where('id', $id)->first();
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(Users::class, 'user_id', 'id');
+    }
+
+    public function profile()
+    {
+        return $this->hasOne(Profiles::class, 'user_id', 'user_id');
     }
 }
