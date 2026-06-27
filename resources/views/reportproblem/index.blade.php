@@ -49,10 +49,10 @@
                                         <div class="form-group">
                                             <label>ชื่อ <font color="red">*</font></label>
                                             <input type="text"
-                                                name="fullname"
-                                                class="form-control"
-                                                value="{{ old('fullname', optional(Auth::user()->profile)->firstname) }}"
-                                                required>
+                                                    name="fullname"
+                                                    class="form-control"
+                                                    value="{{ old('fullname', Auth::check() ? optional(Auth::user()->profile)->firstname : '') }}"
+                                                    required>
                                         </div>
                                     </div>
 
@@ -60,10 +60,10 @@
                                         <div class="form-group">
                                             <label>นามสกุล <font color="red">*</font></label>
                                             <input type="text"
-                                                name="lastname"
-                                                class="form-control"
-                                                value="{{ old('lastname', optional(Auth::user()->profile)->lastname) }}"
-                                                required>
+                                                    name="lastname"
+                                                    class="form-control"
+                                                    value="{{ old('lastname', Auth::check() ? optional(Auth::user()->profile)->lastname : '') }}"
+                                                    required>
                                         </div>
                                     </div>
 
@@ -75,10 +75,10 @@
                                         <div class="form-group">
                                             <label>Email <font color="red">*</font></label>
                                             <input type="email"
-                                                name="email"
-                                                class="form-control"
-                                                value="{{ old('email', optional(Auth::user())->email) }}"
-                                                required>
+                                                    name="email"
+                                                    class="form-control"
+                                                    value="{{ old('email', Auth::check() ? Auth::user()->email : '') }}"
+                                                    required>
                                         </div>
                                     </div>
 
