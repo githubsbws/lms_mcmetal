@@ -16,7 +16,7 @@
       .login-page {
            margin-bottom: 7rem !important;
     margin-top: 6rem !important;
-    } 
+    }
 </style>
 
 <section class="footer-section">
@@ -56,21 +56,19 @@
             </div> --}}
 
             <div class="col-lg-4">
-                
+
             </div>
             <div class="col-lg-4">
                 <h4 class="text-headline text-light" style="font-size: 20px;">ติดต่อเรา</h4>
-                <p>บริษัท โตโย ไซกัน (ประเทศไทย) จำกัด (สำนักงานใหญ่)</p>
-                <p>95 หมู่ 3, สวนอุตสาหกรรมโรจนะ 2,
-                    ตำบล บ้านช้าง, อำเภอ อุทัย,
-                    จังหวัด พระนครศรีอยุธยา. 13210 ประเทศไทย
+                <p>บริษัท เอ็มซี เมทัลเซอร์วิสเอเชีย (ประเทศไทย) จำกัด</p>
+                <p>700/426 หมู่ที่ 7 นิคมอุตสาหกรรมบางปะกง เขตอุตสาหกรรมทั่วไป ตำบลดอนหัวฬ่อ อำเภอเมืองชลบุรี จ.ชลบุรี 20000
 
                 </p>
 
             </div>
 
             <div class="col-md-12 text-center" style="margin-top: 16px;margin-bottom: 0;">
-                <p style="margin-bottom: 0;">Toyoseikan E-learning System © Copyright 2026</p>
+                <p style="margin-bottom: 0;">MC Metal E-learning System © Copyright 2026</p>
             </div>
         </div>
     </div>

@@ -609,6 +609,9 @@ Route::post('/imgslide_delete/{imgslide_id}',[AdminController::class,'imgslide_d
 Route::get('/imgslide_edit/{imgslide_id}',[AdminController::class,'imgslide_edit'])->name('imgslide_edit')->middleware('checkIdleTimeout');
 //
 Route::get('/library/mangement',[AdminLibraryOnlineController::class,'index'])->name('admin.library.online')->middleware('checkIdleTimeout');
+Route::post('/library/uplaodfile',[AdminLibraryOnlineController::class, 'uploadfile'])->name('admin.library.upload')->middleware('checkIdleTimeout');
+Route::post('/library/deletefile/{id}',[AdminLibraryOnlineController::class, 'deletefile'])->name('admin.library.delete')->middleware('checkIdleTimeout');
+Route::get('/library/view-file/{id}',[AdminLibraryOnlineController::class, 'viewFile'])->name('admin.library.view')->middleware('checkIdleTimeout');
 Route::get('/librarytype',[AdminController::class,'librarytype'])->name('librarytype')->middleware('checkIdleTimeout');
 
 Route::get('/libraryfile',[AdminController::class,'libraryfile'])->name('libraryfile')->middleware('checkIdleTimeout');
@@ -868,6 +871,7 @@ Route::get('/licenseperson/parameter',[LicensePersonController::class, 'indexPar
 Route::post('/licenseperson/parameter/import',[LicensePersonController::class, 'parameterImportExcel'])->name('license.parameter.excel');
 
 Route::get('/library-online',[LibraryOnlineController::class, 'index'])->name('library_online')->middleware('checkIdleTimeout');
+Route::get('/library-online/view/{id}',[LibraryOnlineController::class, 'viewfile'])->name('library_online.view')->middleware('checkIdleTimeout');
 
 
 Route::middleware(['auth.admin'])->group(function(){
