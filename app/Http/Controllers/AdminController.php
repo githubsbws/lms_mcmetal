@@ -26,6 +26,8 @@ use Elastic\Elasticsearch\ClientBuilder;
 use Illuminate\Support\Facades\File as FileStore;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ReportProblemReplyMail;
 
 // use Intervention\Image\Facades\Image;
 use App\Models\Questionnaireout;
@@ -4108,6 +4110,17 @@ class AdminController extends Controller
                 $report_update->status = 'success';
                 $report_update->accept_report_date = now();
                 $report_update->save();
+
+                try {
+
+                    Mail::to($report_update->email)
+                        ->send(new ReportProblemReplyMail($report_update));
+
+                } catch (\Exception $e) {
+
+                    \Log::error($e->getMessage());
+
+                }
 
                 return redirect()->route('reportproblem')->with('success', 'อัปเดตข้อมูลเรียบร้อยแล้ว');
             }
