@@ -408,14 +408,14 @@ use App\Helpers\PermissionHelper;
                     <a href="#" class="nav-link {{ request()->is('roadmap*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-route"></i>
                         <p>
-                            ระบบจัดการRoadmap พนังงาน
+                            ระบบจัดการRoadmap พนักงาน
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{ url('/roadmap/new-emp') }}" class="nav-link {{ request()->is('roadmap/new-emp*') ? 'active' : '' }}">
-                                <p>Roadmap พนังงานใหม่</p>
+                                <p>Roadmap พนักงานใหม่</p>
                             </a>
                         </li>
                     </ul>

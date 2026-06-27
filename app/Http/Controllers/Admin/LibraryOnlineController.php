@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Facades\AuthFacade;
 use App\Http\Controllers\Controller;
 use App\Models\LibraryFile;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 
 class LibraryOnlineController extends Controller
 {
@@ -70,5 +72,26 @@ class LibraryOnlineController extends Controller
         $file->update(['active' => 'n']);
 
         return response()->json(['status' => 'success','message' => 'สำเร็จ']);
+    }
+
+    public function viewFile(int $id)
+    {
+        $file = LibraryFile::findOrFail($id);
+        $file->increment('view');
+
+        $path = storage_path('app/public/library/' . $file->filename);
+        if (!file_exists($path)) abort(404);
+
+        $extension = strtolower(pathinfo($file->filename, PATHINFO_EXTENSION));
+        $mimeType  = match($extension) {
+            'pdf' => 'application/pdf',
+            'mp4' => 'video/mp4',
+            default => mime_content_type($path)
+        };
+
+        return response()->file($path, [
+            'Content-Type'        => $mimeType,
+            'Content-Disposition' => 'inline',
+        ]);
     }
 }

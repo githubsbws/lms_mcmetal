@@ -90,7 +90,7 @@
                                                 @else
                                                 <i class="far fa-file-video text-info mr-2"></i>
                                                 @endif
-                                                <a href="#" target="_blank" class="font-weight-bold text-primary">{{ $file->name  }}</a>
+                                                <a href="{{ route('admin.library.view',$file->id) }}" target="_blank" class="font-weight-bold text-primary">{{ $file->name  }}</a>
                                             </td>
                                             <td class="text-center">
                                                 <span class="badge badge-pill badge-info"><i class="far fa-eye mr-1"></i> {{ $file->view }} ครั้ง</span>

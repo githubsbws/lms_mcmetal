@@ -606,6 +606,7 @@ Route::get('/imgslide_edit/{imgslide_id}',[AdminController::class,'imgslide_edit
 Route::get('/library/mangement',[AdminLibraryOnlineController::class,'index'])->name('admin.library.online')->middleware('checkIdleTimeout');
 Route::post('/library/uplaodfile',[AdminLibraryOnlineController::class, 'uploadfile'])->name('admin.library.upload')->middleware('checkIdleTimeout');
 Route::post('/library/deletefile/{id}',[AdminLibraryOnlineController::class, 'deletefile'])->name('admin.library.delete')->middleware('checkIdleTimeout');
+Route::get('/library/view-file/{id}',[AdminLibraryOnlineController::class, 'viewFile'])->name('admin.library.view')->middleware('checkIdleTimeout');
 Route::get('/librarytype',[AdminController::class,'librarytype'])->name('librarytype')->middleware('checkIdleTimeout');
 
 Route::get('/libraryfile',[AdminController::class,'libraryfile'])->name('libraryfile')->middleware('checkIdleTimeout');
