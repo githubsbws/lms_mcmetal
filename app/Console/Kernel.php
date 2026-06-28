@@ -17,6 +17,9 @@ class Kernel extends ConsoleKernel
         //noti แจ้งเตือนหัวหน้าเรื่องการเรียน
         $schedule->command('app:send-weekly-supervisor-notify')
              ->weeklyOn(0, '23:00'); // ทุกวันอาทิตย์ 5 ทุ่ม
+        
+        $schedule->command('report:weekly')
+            ->everyFiveMinutes();
     }
 
     /**
