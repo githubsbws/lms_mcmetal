@@ -57,6 +57,15 @@
     </div>
 </div>
 
+<div id="attendance-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 9999; justify-content: center; align-items: center;">
+    <div style="background: white; padding: 30px; border-radius: 8px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.2); max-width: 400px; width: 90%;">
+        <p style="margin-top: 0; color: #1f2937; font-family: sans-serif;">คุณยังอยู่หน้าจอหรือไม่?</p>
+        <button id="btn-confirm-attendance" style="background: #2563eb; color: white; border: none; padding: 12px 30px; border-radius: 6px; cursor: pointer; font-size: 16px; font-weight: bold; transition: background 0.2s;">
+            ตกลง, ฉันยังอยู่
+        </button>
+    </div>
+</div>
+
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const video = document.getElementById('player');
@@ -177,6 +186,49 @@
             $('#btn-complete').show();
         }
 
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // 🛡️ No Magic Numbers: ย้ายเกณฑ์เงื่อนไขเวลาไปไว้ที่ Configuration Constant เพื่อความยืดหยุ่น
+        const TRIGGER_TIME_SECONDS = 5.0;
+
+        const modal = document.getElementById('attendance-modal');
+        const confirmBtn = document.getElementById('btn-confirm-attendance');
+        const videoElement = document.querySelector('video');
+
+        // 🛡️ Defensive Programming: ป้องกัน Null Pointer เผื่อหน้าจอเดโมนั้นไม่มี Element วิดีโออยู่จริง
+        if (!videoElement) {
+            console.warn('[Architecture Warning] Video element not found on this page.');
+            return;
+        }
+
+        // State Tracking Flag: ป้องกันไม่ให้ป๊อปอัปเด้งซ้ำซ้อนหลังจากกดตกลงไปแล้ว
+        let hasTriggered = false;
+
+        // 🏎️ Performance Optimization: ใช้ 'timeupdate' event ทราฟฟิกฝั่ง Client ทำงานแบบสตรีมความเร็ว $O(1)$
+        videoElement.addEventListener('timeupdate', function () {
+            if (!hasTriggered && videoElement.currentTime >= TRIGGER_TIME_SECONDS) {
+                triggerAttendanceCheck();
+            }
+        });
+
+        function triggerAttendanceCheck() {
+            hasTriggered = true; // ล็อก State ทันทีป้องกัน Race Condition หน้าบ้าน
+
+            // ⚡ UI Interaction: แสดง Modal แพลตฟอร์ม
+            modal.style.display = 'flex';
+
+            // ⏸️ Pause Video Stream: บังคับหยุดสื่อเพื่อรอ Action จากผู้เรียน
+            videoElement.pause();
+        }
+
+        // Event Handling: จังหวะเคลียร์ State เมื่อกดยืนยัน
+        confirmBtn.addEventListener('click', function () {
+            modal.style.display = 'none';
+
+            // ▶️ Resume Video Stream
+            videoElement.play();
+        });
     });
 </script>
 @endsection
