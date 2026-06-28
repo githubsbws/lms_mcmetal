@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Services\CourseExamService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ExamResultMail;
+use App\Models\Course;
 
 class CourseExamController extends Controller
 {
@@ -67,7 +70,7 @@ class CourseExamController extends Controller
     {
         if(Auth::check())
         {
-            $this->courseExamService->multipleExamAnswerSubmit($course_id,$request);
+            $this->courseExamService->multipleExamAnswerSubmit($course_id, $request);
 
             $page = session('exam_from_page', 1);
             return redirect()->route('course', ['page' => $page])

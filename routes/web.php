@@ -41,6 +41,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ConditionController;
 use App\Http\Controllers\ContactusController;
 use App\Http\Controllers\ReportExcelController;
+use App\Http\Controllers\ReportProblemController;
 //-------
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CourseExamController;
@@ -85,6 +86,10 @@ Route::get('repass',[ProfileController::class,'repass'])->name('repass');
 Route::post('repass',[ProfileController::class,'repass'])->name('repass');
 Route::get('create_profile',[ProfileController::class,'create_profile'])->name('create.profile');
 Route::post('create_profile',[ProfileController::class,'create_profile'])->name('create.profile');
+
+Route::get('report-problem', [ReportProblemController::class,'index'])->name('site.reportproblem');
+Route::post('/reportproblem/store',[ReportProblemController::class,'store'])
+    ->name('reportproblem.store');
 // Route::get('/admin', function () {
 //     return view('admin/index/index');
 // });
