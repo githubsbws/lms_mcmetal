@@ -47,15 +47,28 @@ class CourseController extends Controller
         protected LessonProgressService $progressService,
     ) {}
 
-    function course(Request $request)
+    public function course(Request $request)
     {
-        if(Auth::check()){
-            $course_detail = $this->courseService->getCoursesForUser(Auth::user());
-
-            return view("course.course",compact('course_detail'));
-        }else{
+        if (!Auth::check()) {
             return redirect()->route('index');
         }
+
+        $course_detail = $this->courseService->getCoursesForUser(Auth::user());
+
+        foreach ($course_detail as $item) {
+
+            // มีใบประกาศหรือไม่
+            $item->has_certificate = Certificate::where('cert_course', $item->course_id)
+                ->where('active', 'y')
+                ->exists();
+
+            // ผ่านหลักสูตรหรือไม่
+            $item->is_passed = $item->passcourse
+                ->whereIn('passcours_status', ['pass', 'wait'])
+                ->isNotEmpty();
+        }
+
+        return view('course.course', compact('course_detail'));
     }
     // Lession
 
