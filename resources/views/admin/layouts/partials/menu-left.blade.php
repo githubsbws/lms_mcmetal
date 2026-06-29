@@ -408,14 +408,14 @@ use App\Helpers\PermissionHelper;
                     <a href="#" class="nav-link {{ request()->is('roadmap*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-route"></i>
                         <p>
-                            ระบบจัดการRoadmap พนังงาน
+                            ระบบจัดการRoadmap พนักงาน
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{ url('/roadmap/new-emp') }}" class="nav-link {{ request()->is('roadmap/new-emp*') ? 'active' : '' }}">
-                                <p>Roadmap พนังงานใหม่</p>
+                                <p>Roadmap พนักงานใหม่</p>
                             </a>
                         </li>
                     </ul>
@@ -467,7 +467,7 @@ use App\Helpers\PermissionHelper;
                     </ul>
                 </li>
                 @endcanmenu --}}
-                {{-- @canmenu(18)
+                @canmenu(18)
                 <li class="nav-item {{ request()->is('reportproblem*') ? 'menu-open' : '' }}">
                     <a href="#" class="nav-link {{ request()->is('reportproblem*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-bug"></i>
@@ -481,7 +481,7 @@ use App\Helpers\PermissionHelper;
                         </li>
                     </ul>
                 </li>
-                @endcanmenu --}}
+                @endcanmenu
                 {{-- @canmenu(19)
                 <li class="nav-item {{ request()->is('faq*') ? 'menu-open' : '' }}">
                     <a href="#" class="nav-link {{ request()->is('faq*') ? 'active' : '' }}">
@@ -654,8 +654,18 @@ use App\Helpers\PermissionHelper;
                 </li>
                 @endcanmenu --}}
                 @canmenu(23)
-                <li class="nav-item {{ request()->is('report*') ? 'menu-open' : '' }}">
-                    <a href="#" class="nav-link {{ request()->is('report*') ? 'active' : '' }}">
+                <li class="nav-item {{ request()->is([
+                                            'report_user',
+                                            'report_license',
+                                            'personal-assessment',
+                                            'report/learning_potential',
+                                        ]) ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ request()->is([
+                                            'report_user',
+                                            'report_license',
+                                            'personal-assessment',
+                                            'report/learning_potential',
+                                        ]) ? 'active' : '' }}">
                         <i class="nav-icon fas fa-print"></i>
                         <p>
                             ระบบ Report

@@ -966,7 +966,7 @@
     <body>
         <div class="main-content">
             <section class="hero-banner-container">
-                <img src="{{ asset('assets/images/banner.png') }}" alt="E-Learning Banner" class="hero-banner-img"
+                <img src="{{ asset('assets/images/banner.jpg') }}" alt="E-Learning Banner" class="hero-banner-img"
                     style="width: 100%;">
             </section>
 

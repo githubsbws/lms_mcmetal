@@ -34,7 +34,7 @@ class RegisterController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'username' => 'required',
+            'username' => ['required','unique:users,username'],
             'password' => ['required','min:8'],
             'firstname' => 'required',
             'lastname' => 'required',
@@ -45,6 +45,7 @@ class RegisterController extends Controller
 
         ],[
             'username.required' => 'กรุณาใส่เลขพนักงาน',
+            'username.unique' => 'มีรหัสพนักงานนี้อยู่ในระบบแล้ว',
             // 'username.min'      => 'ชื่อผู้ใช้งานต้องมีอย่างน้อย :min ตัวอักษรนะ',
             'password.required'   => 'กรุณาใส่รหัสผ่าน',
             'password.min'   => 'รหัสผ่านต้องมีความยาวอย่างน้อย8หลัก',

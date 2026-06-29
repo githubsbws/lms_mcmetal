@@ -15,6 +15,7 @@ if (empty($_SESSION['lang']) || $_SESSION['lang'] == 1) {
     $product7 = 'ผลิตภัณฑ์สปา';
     $gallery = 'แกลเลอรี';
     $contactus = 'ติดต่อเรา';
+    $reportproblem = 'แจ้งปัญหาการใช้งาน';
 } else {
     $_SESSION['lang'] = 2;
     $flag = 'enflag.png';
@@ -25,6 +26,7 @@ if (empty($_SESSION['lang']) || $_SESSION['lang'] == 1) {
     $product7 = 'Product';
     $gallery = 'Gallery';
     $contactus = 'Contact us ';
+    $reportproblem = 'Report problem';
 }
 
 use App\Models\Usability;
@@ -174,7 +176,7 @@ use App\Models\Usability;
                 </button>
                 <div class="navbar-brand navbar-brand-logo">
                     <a href="{{url('index')}}">
-                        <img src="{{ asset('themes/bws/images/toyologo.jpg') }}" class="logonav" style="width: 74px !important; height: auto !important;">
+                        <img src="{{ asset('themes/bws/images/logo.jpg') }}" class="logonav" style="width: 74px !important; height: auto !important;">
                     </a>
                 </div>
             </div>
@@ -210,6 +212,9 @@ use App\Models\Usability;
                     </li>
                     <li class="dropdown">
                         <a href="{{ route('site.contactus') }}">ติดต่อเรา</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="{{ route('site.reportproblem') }}">แจ้งปัญหาการใช้งาน</a>
                     </li>
 
 

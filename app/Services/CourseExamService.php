@@ -49,7 +49,7 @@ class CourseExamService
         $userScores     = $course->courseScore;
         $hasPostTest    = $userScores->where('exam_type',self::EXAM_TYPE_POSTTEST);
         $hasPassed      = $hasPostTest->where('score_status', 'pass')->isNotEmpty();
-        $attemptedCount = $userScores->count();
+        $attemptedCount = $hasPostTest ->count();
         $maxAttempts    = 1 + (int)($course->course_retest_amount ?? 0);
         $hasQuestions   = $course->groupTesting?->questions?->isNotEmpty() ?? false;
 
@@ -79,7 +79,6 @@ class CourseExamService
         if ($attemptedCount >= $maxAttempts) {
             throw new \Exception('คุณใช้สิทธิ์สอบซ่อมครบกำหนดแล้ว กรุณาติดต่อแอดมิน');
         }
-
         $examSession = $this->getOrCreateExamSession($userId, $courseId,2, self::EXAM_TYPE_POSTTEST);
         // 5. ฝากข้อมูลเข้าไปใน $course ตรงๆ เลย
         $course->exam_session = $examSession;
