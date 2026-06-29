@@ -98,6 +98,9 @@
         .hero-banner-container {
             width: 100%;
             overflow: hidden;
+            img {
+                    height: 770px;
+            }
         }
 
         /*    .hero-banner-img {
