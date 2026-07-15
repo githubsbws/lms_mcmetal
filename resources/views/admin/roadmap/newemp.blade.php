@@ -25,7 +25,7 @@
                             <h5 class="card-title m-0 text-dark">
                                 Roadmap ทั้งหมดของ
                                 <span class="badge badge-primary px-3 py-2 ml-1 shadow-sm" style="font-size: 1rem; border-radius: 8px; background: linear-gradient(45deg, #007bff, #0056b3);">
-                                    <i class="fas fa-building mr-1"></i> {{ Auth::user()->Department->title }}
+                                    <i class="fas fa-building mr-1"></i> {{ Auth::user()->Department?->title }}
                                 </span>
                             </h5>
                         </div>

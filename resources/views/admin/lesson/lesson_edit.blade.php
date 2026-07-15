@@ -142,7 +142,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="FileDoc_doc">ไฟล์ประกอบบทเรียน (pdf,docx,pptx)</label>
+                                <label for="FileDoc_doc">ไฟล์ประกอบบทเรียน (pdf)</label>
                                 @if($filedoc !== null)
                                 <h5>{{ $filedoc->file_name}}</h5>
 

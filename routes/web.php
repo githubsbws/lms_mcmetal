@@ -864,11 +864,19 @@ Route::post('/ocr_del/{id}', [AdminController::class, 'OCRdel'])->name('ocr.del'
 Route::get('/ocr/edit/{id}/{page_number}', [AdminController::class, 'OCRedit'])->name('ocr.edit');
 Route::put('/ocr/update/{id}/{page_number}', [AdminController::class, 'OCRupdate'])->name('ocr.update');
 
-Route::get('/licenseperson/operate',[LicensePersonController::class, 'indexOperate'])->name('license.operate.index');
-Route::post('/licenseperson/operate/import',[LicensePersonController::class, 'operateImportExcel'])->name('license.operate.excel');
+Route::get('/licenseperson/user',[LicensePersonController::class, 'indexOperate'])->name('license.operate.index');
+Route::post('/licenseperson/user/import',[LicensePersonController::class, 'operateImportExcel'])->name('license.operate.excel');
 
-Route::get('/licenseperson/parameter',[LicensePersonController::class, 'indexParameter'])->name('license.parameter.index');
-Route::post('/licenseperson/parameter/import',[LicensePersonController::class, 'parameterImportExcel'])->name('license.parameter.excel');
+Route::get('/licenseperson/user/edit/{id}',[LicensePersonController::class, 'operateEdit'])->name('license.operate.edit')->middleware('checkIdleTimeout');
+Route::post('/licenseperson/user/update/{id}',[LicensePersonController::class, 'operateEdit'])->name('license.operate.update')->middleware('checkIdleTimeout');
+Route::post('/licenseperson/user/delete/{id}',[LicensePersonController::class, 'operateDelete'])->name('license.operate.delete')->middleware('checkIdleTimeout');
+
+Route::get('/licenseperson/authorized',[LicensePersonController::class, 'indexParameter'])->name('license.parameter.index');
+Route::post('/licenseperson/authorized/import',[LicensePersonController::class, 'parameterImportExcel'])->name('license.parameter.excel')->middleware('checkIdleTimeout');
+
+Route::get('/licenseperson/authorized/edit/{id}',[LicensePersonController::class, 'parameterEdit'])->name('license.parameter.edit')->middleware('checkIdleTimeout');
+Route::post('/licenseperson/authorized/update/{id}',[LicensePersonController::class, 'parameterEdit'])->name('license.parameter.update')->middleware('checkIdleTimeout');
+Route::post('/licenseperson/authorized/delete/{id}',[LicensePersonController::class, 'parameterDelete'])->name('license.parameter.delete')->middleware('checkIdleTimeout');
 
 Route::get('/library-online',[LibraryOnlineController::class, 'index'])->name('library_online')->middleware('checkIdleTimeout');
 Route::get('/library-online/view/{id}',[LibraryOnlineController::class, 'viewfile'])->name('library_online.view')->middleware('checkIdleTimeout');

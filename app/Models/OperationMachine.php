@@ -12,13 +12,16 @@ class OperationMachine extends Model
     protected $table = 'operation_machine';
 
     protected $primaryKey = 'id';
-    public $timestamps = false;
+    protected $casts = [
+        'line' => 'array', // 🔥 คาถาเสกให้ Laravel แปลง JSON ในเบส ออกมาเป็น Array ของ PHP อัตโนมัติ
+    ];
 
+    public $timestamps = false;
 
     protected $fillable = [
         'operation_name',
         'active',
-        'operation_code'
+        'line'
     ];
 
 }

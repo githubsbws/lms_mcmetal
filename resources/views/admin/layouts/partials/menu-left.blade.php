@@ -390,14 +390,14 @@ use App\Helpers\PermissionHelper;
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ url('/licenseperson/operate') }}" class="nav-link {{ request()->is('licenseperson/operate*') ? 'active' : '' }}">
-                                <p>Operate Machine</p>
+                            <a href="{{ url('/licenseperson/user') }}" class="nav-link {{ request()->is('licenseperson/user*') ? 'active' : '' }}">
+                                <p>License User</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{ url('/licenseperson/parameter') }}" class="nav-link {{ request()->is('licenseperson/parameter*') ? 'active' : '' }}">
-                                <p>Parameter Setting</p>
+                            <a href="{{ url('/licenseperson/authorized') }}" class="nav-link {{ request()->is('licenseperson/authorized*') ? 'active' : '' }}">
+                                <p>License Authorized</p>
                             </a>
                         </li>
                     </ul>

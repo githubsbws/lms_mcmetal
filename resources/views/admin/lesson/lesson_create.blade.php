@@ -95,7 +95,7 @@
 							</div>
 
                             <div class="form-group">
-								<label for="FileDoc_doc">ไฟล์ประกอบบทเรียน (pdf, docx, pptx)</label>
+								<label for="FileDoc_doc">ไฟล์ประกอบบทเรียน (pdf)</label>
 								<div class="fileupload fileupload-new" data-provides="fileupload">
 									<div id="fileNameDisplay"></div>
 									<span class="btn btn-default btn-file">
