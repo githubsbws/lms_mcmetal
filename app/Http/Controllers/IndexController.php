@@ -39,6 +39,7 @@ class IndexController extends Controller
         // 2. Standards: เริ่มตั้งต้น Query Builder แบบฐานข้อมูลเดียว (Single Source of Truth)
         $query = Course::query()
             ->with(['teacher:teacher_id,teacher_name']) // Speed: ดึงเฉพาะคอลัมน์ที่ใช้จริง ลดการโหลด Data
+            ->where('active', self::STATUS_ACTIVE)
             ->limit(6);
 
         // 3. Speed & Architecture: ใช้ Subquery แทนการ pluck() เพื่อลดการใช้ Memory

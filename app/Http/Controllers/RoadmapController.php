@@ -13,12 +13,27 @@ use Illuminate\Support\Facades\DB;
 class RoadmapController extends Controller
 {
     public function indexNewEmp(Request $request) {
-        $newEmpRoadmap = Roadmap::with('roadmapCourse')
-                                ->where('department_org_id',Auth::user()->department_org_id)
-                                ->where('active','y')
-                                ->when($request->search, function($query, $search) {
-                                    return $query->where('name', 'LIKE', "%{$search}%");
-                                })->get();
+        // $newEmpRoadmap = Roadmap::with('roadmapCourse')
+        //                         ->where('department_org_id',Auth::user()->department_org_id)
+        //                         ->where('active','y')
+        //                         ->when($request->search, function($query, $search) {
+        //                             return $query->where('name', 'LIKE', "%{$search}%");
+        //                         })->get();
+
+        $newEmpRoadmap = Roadmap::with([
+                    'roadmapCourse' => function ($q) {
+                        $q->where('active', 'y')
+                        ->whereHas('course', function ($course) {
+                            $course->where('active', 'y');
+                        });
+                    }
+                ])
+                ->where('department_org_id', Auth::user()->department_org_id)
+                ->where('active', 'y')
+                ->when($request->search, function ($query, $search) {
+                    return $query->where('name', 'LIKE', "%{$search}%");
+                })
+                ->get();
 
         if ($request->ajax()) {
             // ส่งกลับเฉพาะส่วนที่อยู่ใน fragment 'roadmap-cards' ของหน้าเดิม
@@ -28,9 +43,20 @@ class RoadmapController extends Controller
     }
 
     public function newEmpDetail(Request $request) {
-        $roadmapCourse = Roadmap::with(['roadmapCourse'=> function($q) {
-                                $q->orderBy('order', 'asc');
-                                }])->findOrFail($request->id);
+        // $roadmapCourse = Roadmap::with(['roadmapCourse'=> function($q) {
+        //                         $q->orderBy('order', 'asc');
+        //                         }])->findOrFail($request->id);
+
+        $roadmapCourse = Roadmap::with([
+                'roadmapCourse' => function ($q) {
+                    $q->where('active', 'y')
+                    ->whereHas('course', function ($course) {
+                        $course->where('active', 'y');
+                    })
+                    ->with('course')
+                    ->orderBy('order');
+                }
+            ])->findOrFail($request->id);
         return view('admin.roadmap.newemp_detail',compact('roadmapCourse'));
     }
 

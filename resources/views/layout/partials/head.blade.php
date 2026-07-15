@@ -195,9 +195,9 @@ use App\Models\Usability;
                         <a href="{{ url('course') }}">หลักสูตร</a>
                     </li>
 
-                    <li class="dropdown">
+                    {{-- <li class="dropdown">
                         <a href="{{url('dashboard')}}">แดชบอร์ด</a>
-                    </li>
+                    </li> --}}
                     <li class="dropdown">
                         <a href="{{ route('library_online') }}">ห้องสมุดออนไลน์</a>
                     </li>

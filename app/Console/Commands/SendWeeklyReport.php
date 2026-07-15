@@ -57,7 +57,7 @@ class SendWeeklyReport extends Command
             ? round(($totalPass / $totalExam) * 100, 2)
             : 0;
 
-        Mail::to('stpdis1503@gmail.com')
+        Mail::to('tanapat@bangkokwebsolution.com')
             ->send(new WeeklyReportMail(
                 $weeklyScores,
                 $pass,

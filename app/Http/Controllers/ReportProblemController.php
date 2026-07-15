@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\ReportProblem;
+use App\Models\Reportproblem;
 
 class ReportProblemController extends Controller
 {
@@ -25,7 +25,7 @@ class ReportProblemController extends Controller
                 'report_pic'    => 'nullable|image|max:2048',
             ]);
 
-            $report = new ReportProblem();
+            $report = new Reportproblem();
 
             if(Auth::check()){
                 $report->user_id = Auth::id();

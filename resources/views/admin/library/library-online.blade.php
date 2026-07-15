@@ -7,7 +7,7 @@
                 <div class="container-fluid">
                     <div class="d-flex align-items-center justify-content-between">
                         <div class="d-flex align-items-center">
-                            <h4 class="m-0 font-weight-bold text-dark">ระบบข่าวสารและกิจกรรม</h4>
+                            <h4 class="m-0 font-weight-bold text-dark">ระบบห้องสมุดออนไลน์</h4>
                             <div class="ml-3">
                                 <a href="#">
                                     <button class="btn btn-warning d-flex align-items-center shadow-sm">

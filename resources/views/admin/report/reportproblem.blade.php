@@ -41,8 +41,8 @@
 								<tbody id="sortable">
 									@foreach ($reportproblem as $item)
 									<tr>
-										<td>{{ $item->profile->firstname}}</td>
-										<td>{{ $item->profile->lastname}}</td>
+										<td>{{ $item->profile->firstname ?? '-' }}</td>
+										<td>{{ $item->profile->lastname ?? '-' }}</td>
 										<td >{{$item->email}}</td>
 										<td >{{$item->tel}}</td>
 										<td >{{$item->report_detail}}</td>
