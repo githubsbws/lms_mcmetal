@@ -31,7 +31,7 @@ class LibraryOnlineController extends Controller
     public function index()
     {
         if(AuthFacade::useradmin()){
-            $libraryFiles = LibraryFile::where('active',self::STATUS_ACTIVE)->paginate(self::SHOW_LIMIT);
+            $libraryFiles = LibraryFile::where('active',self::STATUS_ACTIVE)->orderBy('created_at','DESC')->paginate(self::SHOW_LIMIT);
             return view('admin.library.library-online',compact('libraryFiles'));
         }
         return redirect()->route('login.admin');

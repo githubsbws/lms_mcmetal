@@ -225,7 +225,7 @@ use App\Models\ASC;
 
             // 4. ดึงข้อมูลตัวลูกผ่าน API
             $.get('/api/get-sub-org/' + parentId, function (res) {
-                console.log(res);
+                // console.log(res);
                 var nextSelect = $('#' + nextId);
                 var nextGroup = $('#group-' + nextId);
                 var nextLabel = $(`label[for="${nextId}"]`);
@@ -311,7 +311,20 @@ $(document).ready(function() {
         currentSelect.val(id);
 
         var nextId = currentSelect.data('next');
-        if (!nextId || index + 1 >= path.length) return;
+        
+        // ถ้าไม่มี nextId หรือเป็นตัวสุดท้ายใน path
+        if (!nextId || index + 1 >= path.length) {
+            // เช็คว่าตัวนี้มีลูกไหม ถ้าไม่มีลูก ให้เปลี่ยน label เป็น "ตำแหน่ง"
+            $.get('/api/get-sub-org/' + id, function(res) {
+                if (!res.has_child) {
+                    var currentLabel = $('label[for="' + currentSelect.attr('id') + '"]');
+                    if (level < 6) {
+                        currentLabel.text('ตำแหน่ง');
+                    }
+                }
+            });
+            return;
+        }
 
         $.get('/api/get-sub-org/' + id, function(res) {
             if (res.has_child) {

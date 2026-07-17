@@ -225,14 +225,14 @@
 
             // 4. ดึงข้อมูลตัวลูกผ่าน API
             $.get('/api/get-sub-org/' + parentId, function (res) {
-                console.log(res);
+                // console.log(res);
                 var nextSelect = $('#' + nextId);
                 var nextGroup = $('#group-' + nextId);
                 var nextLabel = $(`label[for="${nextId}"]`);
                 if (res.has_child) {
                     // มีลูกต่อ: วาด Option และเปิดให้กด
                     // console.log(nextId);
-                    nextLabel.text(nextSelect.data('label-name'));
+                    nextLabel.html(nextSelect.data('label-name') + ' <span class="text-danger">*</span>');
                     var options = '<option value="" disabled selected>-- เลือกรายการ --</option>';
                     $.each(res.data, function (key, item) {
                         options += `<option value="${item.id}">${item.title}</option>`;
@@ -243,10 +243,10 @@
                 } else {
                     // ไม่มีลูกแล้ว: จบสายงานที่ตรงนี้
                     var currentLabel = $(`label[for="${currentSelect.attr('id')}"]`);
-                        console.log(currentLabel);
+                        // console.log(currentLabel);
                     // เช็คเลเวลหน่อย เผื่อเลเวล 6 เราไม่อยากยุ่งกับมัน (เพราะมันคือตำแหน่งอยู่แล้ว)
                     if (currentLevel < 6) {
-                        currentLabel.text('ตำแหน่ง');
+                        currentLabel.html('ตำแหน่ง <span class="text-danger">*</span>');
                     }
                     nextSelect.prop('disabled', true);
                     nextGroup.hide();

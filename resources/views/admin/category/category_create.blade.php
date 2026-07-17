@@ -42,7 +42,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="summernote">รายละเอียด</label>
+                                <label for="summernote">รายละเอียด <span class="text-danger">*</span></label>
                                 <textarea name="cate_detail" id="summernote" class="form-control"></textarea>
                             </div>
 

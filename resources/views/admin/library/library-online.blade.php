@@ -109,10 +109,10 @@
                                         </tr>
                                     @endforeach
                                 </tbody>
-                                <div class="d-flex justify-content-center mt-4">
-                                    {{ $libraryFiles->links() }}
-                                </div>
                             </table>
+                            <div class="d-flex justify-content-center mt-4">
+                                {{ $libraryFiles->links('pagination::bootstrap-4') }}
+                            </div>
                         @else
                             <div class="text-center mt-2"><p>ไม่มีข้อมูล</p></div>
                         @endif
