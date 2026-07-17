@@ -306,12 +306,21 @@ class CourseService
                     ->delete();
             }
 
-            // 3. ไปที่ตาราง coursescore หาข้อมูลที่ตรงกับ user, course, ปีปัจจุบัน และสถานะเป็น fail แล้วลบทิ้งทั้งหมด
-            DB::table('coursescore') // เปลี่ยนเป็นชื่อตารางจริงของน้อง เช่น tbl_coursescore
+            // 3. ลบทั้งหมดของ exam_type = 'pre' ของคนนั้น
+            DB::table('coursescore')
                 ->where('user_id', $userId)
                 ->where('course_id', $courseId)
                 ->where('pass_year', $currentYear)
-                ->where('score_status', self::FAIL_STATUS) // ดักลบเฉพาะพวกที่เป็น fail ตามโจทย์
+                ->where('exam_type', 'pre')
+                ->delete();
+
+            // 4. อัปเดตเฉพาะ exam_type = 'post' ที่มีสถานะ fail
+            DB::table('coursescore') 
+                ->where('user_id', $userId)
+                ->where('course_id', $courseId)
+                ->where('pass_year', $currentYear)
+                ->where('exam_type', 'post')
+                ->where('score_status', self::FAIL_STATUS)
                 ->delete();
 
         });
